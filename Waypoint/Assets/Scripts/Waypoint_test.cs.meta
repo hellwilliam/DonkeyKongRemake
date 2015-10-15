@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: d74f06d763bc78f4d892d38c4123d12f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Cube: {instanceID: 0}
+  - way1: {instanceID: 0}
+  - way2: {instanceID: 0}
+  - way3: {instanceID: 0}
+  - way4: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
