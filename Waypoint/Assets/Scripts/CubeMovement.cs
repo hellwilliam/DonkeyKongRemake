@@ -3,6 +3,10 @@ using System.Collections;
 
 public class CubeMovement : MonoBehaviour {
 
+    public void SearchForOtherWaypoint(Waypoint waypoint)
+    {
+        //waypoint.next
+    }
     void wake ()
     {
 
