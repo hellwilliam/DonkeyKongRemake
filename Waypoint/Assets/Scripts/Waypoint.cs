@@ -12,7 +12,7 @@ public class Waypoint : MonoBehaviour
         Debug.Log("NO WAYPOINT VAI");
         if (other.gameObject.CompareTag("Barrel"))
         {
-            CubeMovement barril = other.gameObject.GetComponent<CubeMovement>();
+            BarrelMovement barril = other.gameObject.GetComponent<BarrelMovement>();
             barril.SearchForOtherWaypoint(this);
         }
     }

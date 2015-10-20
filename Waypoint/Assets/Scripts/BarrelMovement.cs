@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BarrelMovement : MonoBehaviour
 {
-    public int speed = 100;
+    float speed = 2.0f;
     Vector3 direction = Vector3.forward;
     Vector3 movePosition = Vector3.zero;
     Vector3 newPosition = Vector3.zero;
@@ -28,7 +28,8 @@ public class BarrelMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 newPosition = direction * (speed * Time.deltaTime);
+        Vector3 newPosition = direction * (Time.deltaTime * speed);
         newPosition = transform.position + newPosition;
+        transform.position = newPosition;
     }
 }
