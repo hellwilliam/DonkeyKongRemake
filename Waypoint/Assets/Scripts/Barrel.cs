@@ -1,38 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Barrel : MonoBehaviour 
 {
-    
+    public Waypoint waypointToFollow;
+    private Waypoint lastWaypoint;
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("AEAOSEHJAOSEASJKLHEAJKSE");
         Waypoint waypoint = other.gameObject.GetComponent<Waypoint>();
-        if (waypoint != null)
+        if (waypoint != null && waypoint != lastWaypoint)
         {
             ChangeTarget(waypoint);
-
         }
-
     }
 
-    private void ChangeTarget(Waypoint waypoint)
+    void ChangeTarget(Waypoint waypoint)
     {
-        throw new System.NotImplementedException();
+        lastWaypoint = waypoint;
+        if (waypoint.nextWaypoints.Count > 0)
+        {
+            waypoint.lastChoice = (waypoint.lastChoice + 1) % waypoint.nextWaypoints.Count;
+            waypointToFollow = waypoint.nextWaypoints[waypoint.lastChoice];
+            Vector3 waypointToFollowPosition = waypointToFollow.transform.position;
+            transform.LookAt(new Vector3(waypointToFollowPosition.x, transform.position.y, waypointToFollowPosition.z));
+        }
+        else
+        {
+            waypointToFollow = null;
+        }
     }
 
-    void OnTriggerStay(Collider other)
+    public float speed = 2f;
+
+    // Update is called once per frame
+    void Update()
     {
-        Debug.Log("LALALALA2");
+        if (waypointToFollow != null)
+        {
+            Vector3 force = transform.forward * (Time.deltaTime * speed);
+            Vector3 newPosition = transform.position + force;
+            transform.position = newPosition;
+        }
     }
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
