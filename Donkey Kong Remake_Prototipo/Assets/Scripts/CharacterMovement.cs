@@ -28,7 +28,7 @@ public class CharacterMovement : MonoBehaviour
 	void Start () {
         floorMask = LayerMask.GetMask("Floor");
         grounded = true;
-        lastMove = Vector3.zero;
+        lastMove = transform.forward;
 	}
 	
 	// Update is called once per frame
