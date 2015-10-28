@@ -4,6 +4,7 @@ using System.Collections;
 public class CameraInput : MonoBehaviour {
 
     public Transform cameraPivot;
+    public Transform player;
     public float minZ = 0;
     public float maxZ = 90;
 
@@ -15,15 +16,21 @@ public class CameraInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //float h = Input.GetAxis("Mouse X") * (Input.GetMouseButton(0) ? 1 : 0) * Time.deltaTime;
-        //float v = Input.GetAxis("Mouse Y") * (Input.GetMouseButton(0) ? 1 : 0) * -1 * Time.deltaTime;
+        Rotate();
+        FollowPlayer();
+	}
+
+    private void FollowPlayer()
+    {
+        cameraPivot.position = player.position;
+    }
+
+    private void Rotate()
+    {
         float h = Input.GetAxis("CameraRotation") * Time.deltaTime;
-        //float v = Input.GetAxis("Vertical") * -1 * Time.deltaTime;
-      
         Vector3 rotation = cameraPivot.eulerAngles;
-        //rotation.z = Mathf.Clamp(rotation.z + v * zSpeed, minZ, maxZ);
         rotation.y = rotation.y + h * ySpeed;
         rotation.x = 0f;
         cameraPivot.eulerAngles = rotation;
-	}
+    }
 }
