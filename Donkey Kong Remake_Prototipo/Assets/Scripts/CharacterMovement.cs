@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class CharacterMovement : MonoBehaviour 
@@ -46,14 +46,14 @@ public class CharacterMovement : MonoBehaviour
                 moveDirection += h * cameraPivot.right;
                 moveDirection *= moveSpeed;
                 moveDirection *= Time.deltaTime;
-                rigidbody.MovePosition(rigidbody.position + moveDirection);
+                transform.Translate(moveDirection, Space.World);
             }
             else
             {
                 Vector3 moveDirection = v * Vector3.up;
                 moveDirection *= moveSpeed;
                 moveDirection *= Time.deltaTime;
-                rigidbody.MovePosition(rigidbody.position + moveDirection);
+                transform.Translate(moveDirection, Space.World);
                 rigidbody.velocity = new Vector3(0, 0, 0);
 
                 if (!IsGrounded())
