@@ -10,6 +10,7 @@ public class CharacterMovement : MonoBehaviour
     public Ladder ladder;
     public float groundCollisionExtent = 0.5f;
     public bool grounded;
+    public bool jumped = false;
     int floorMask;
     Vector3 lastMove;
 
@@ -20,10 +21,6 @@ public class CharacterMovement : MonoBehaviour
         {
             ladder = value;
             rigidbody.useGravity = ladder == null;
-            if (ladder != null)
-            {
-                lastMove = ladder.transform.forward * moveSpeed * Time.deltaTime;
-            }
         }
     }
        
@@ -70,7 +67,7 @@ public class CharacterMovement : MonoBehaviour
             }
             transform.Translate(moveDirection, Space.World);
         }
-        else
+        else if (jumped)
         {
             transform.Translate(lastMove, Space.World);
         }
@@ -78,19 +75,33 @@ public class CharacterMovement : MonoBehaviour
 
     private void Rotate()
     {
-        Quaternion lookRotation = Quaternion.LookRotation(lastMove, Vector3.up);
+        Quaternion lookRotation = transform.rotation;
+
+        if (!ladder)
+        {
+            lookRotation = Quaternion.LookRotation(lastMove, transform.up);
+            
+        }
+        else
+        {
+            Vector3 playerToLadder = ladder.transform.position - transform.position;
+            playerToLadder.y = 0;
+            lookRotation = Quaternion.LookRotation(playerToLadder, transform.up);
+        }
+
         lookRotation.x = 0;
         lookRotation.z = 0;
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, turnSpeed * Time.deltaTime);
-        //Vector3 lookTowards = (transform.position + lastMove);
-        //lookTowards.y = transform.position.y;
-        //transform.LookAt(lookTowards);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, turnSpeed * Time.deltaTime); // we could use raycasting to look perpendicular to the object, but nah
     }
 
     private void UpdateGrounded()
     {
         RaycastHit hit;
         grounded = Physics.SphereCast(transform.position, 0.5f, -Vector3.up, out hit, groundCollisionExtent, floorMask);
+        if (jumped)
+        {
+            jumped = !grounded;
+        }
     }
 
    private void Jump()
@@ -98,6 +109,7 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && grounded && ladder == null)
         {
             rigidbody.velocity += jumpForce * Vector3.up;
+            jumped = true;
         }
     }
 
