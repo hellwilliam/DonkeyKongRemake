@@ -53,7 +53,7 @@ public class Barrel : MonoBehaviour
         Despawn();
     }
 
-    void Despawn(float delay = 2f)
+    void Despawn(float delay = 1f)
     {
         Destroy(gameObject, delay);
     }
@@ -83,7 +83,7 @@ public class Barrel : MonoBehaviour
             transform.position = transform.position + ((-transform.up) * speed * Time.deltaTime);
         }
 
-        if (transform.position.y < -100)
+        if (transform.position.y < -10)
         {
             Despawn(0);
         }

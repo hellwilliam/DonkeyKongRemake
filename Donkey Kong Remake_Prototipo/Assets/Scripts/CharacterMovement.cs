@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour
     public float groundCollisionExtent = 0.5f;
     public bool grounded;
     public bool jumped = false;
+    public bool dead = false;
     int floorMask;
     Vector3 lastMove;
 
@@ -44,9 +45,9 @@ public class CharacterMovement : MonoBehaviour
 
     private void CheckKillPlane()
     {
-        if (transform.position.y < -100)
+        if (transform.position.y < -10)
         {
-            Destroy(gameObject, 0);
+            Die();
         }
     }
 
@@ -54,7 +55,7 @@ public class CharacterMovement : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        Vector3 moveDirection = Vector3.zero;
+        Vector3 moveDirection = transform.forward;
         
         if (ladder)
         {
@@ -71,10 +72,7 @@ public class CharacterMovement : MonoBehaviour
             moveDirection += h * cameraPivot.right;
             moveDirection *= moveSpeed;
             moveDirection *= Time.deltaTime;
-            if (moveDirection.magnitude != 0)
-            {
-                lastMove = moveDirection;
-            }
+            lastMove = moveDirection;
             transform.Translate(moveDirection, Space.World);
         }
         else if (jumped)
@@ -89,8 +87,12 @@ public class CharacterMovement : MonoBehaviour
 
         if (!ladder)
         {
-            lookRotation = Quaternion.LookRotation(lastMove, transform.up);
-            
+            Vector3 orientation = lastMove;
+            if (orientation.magnitude == 0f)
+            {
+                orientation = transform.forward;
+            }
+            lookRotation = Quaternion.LookRotation(orientation, transform.up);
         }
         else
         {
@@ -114,13 +116,18 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-   private void Jump()
+    private void Jump()
     {
         if (Input.GetButtonDown("Jump") && grounded && ladder == null)
         {
             rigidbody.velocity += jumpForce * Vector3.up;
             jumped = true;
         }
+    }
+
+    private void Die()
+    {
+        dead = true;
     }
 
     public void ResetPosition()
