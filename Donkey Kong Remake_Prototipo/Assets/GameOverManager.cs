@@ -18,11 +18,11 @@ public class GameOverManager : MonoBehaviour {
             gameOverScreen.SetActive(true);
             Barrel.moving = false;
             BarrelManager.spawning = false;
-        }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Restart();
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart"))
+            {
+                Restart();
+            }
         }
 	}
 

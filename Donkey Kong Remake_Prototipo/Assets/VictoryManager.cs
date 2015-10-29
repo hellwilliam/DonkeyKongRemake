@@ -16,6 +16,10 @@ public class VictoryManager : MonoBehaviour {
 	    if (player.won)
         {
             victoryScreen.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart"))
+            {
+                Restart();
+            }
         }
 	}
 
