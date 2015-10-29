@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Barrel : MonoBehaviour 
 {
+    public static bool moving = true;
     public Waypoint waypointToFollow;
     public float rotationSpeed = 10f;
     public float speed = 10f;
@@ -66,26 +67,29 @@ public class Barrel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (waypointToFollow != null)
+        if (moving)
         {
-            Vector3 pos = waypointToFollow.transform.position - transform.position;
-            pos.y = 0; // force rotation on Y
-            Quaternion myRot = Quaternion.LookRotation(pos);
-            transform.rotation = Quaternion.Slerp(transform.rotation, myRot, rotationSpeed * Time.deltaTime);
+            if (waypointToFollow != null)
+            {
+                Vector3 pos = waypointToFollow.transform.position - transform.position;
+                pos.y = 0; // force rotation on Y
+                Quaternion myRot = Quaternion.LookRotation(pos);
+                transform.rotation = Quaternion.Slerp(transform.rotation, myRot, rotationSpeed * Time.deltaTime);
 
-            Vector3 force = transform.forward * (Time.deltaTime * speed);
-            Vector3 newPosition = transform.position + force;
-            transform.position = newPosition;
-        }
+                Vector3 force = transform.forward * (Time.deltaTime * speed);
+                Vector3 newPosition = transform.position + force;
+                transform.position = newPosition;
+            }
 
-        if (dead)
-        {
-            transform.position = transform.position + ((-transform.up) * speed * Time.deltaTime);
-        }
+            if (dead)
+            {
+                transform.position = transform.position + ((-transform.up) * speed * Time.deltaTime);
+            }
 
-        if (transform.position.y < -10)
-        {
-            Despawn(0);
+            if (transform.position.y < -10)
+            {
+                Despawn(0);
+            }
         }
     }
 }
