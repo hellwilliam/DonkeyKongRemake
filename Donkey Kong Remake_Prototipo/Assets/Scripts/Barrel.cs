@@ -14,7 +14,7 @@ public class Barrel : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Waypoint waypoint = other.gameObject.GetComponent<Waypoint>();
-        if (waypoint != null && waypoint != lastWaypoint)
+        if (waypoint != null && waypoint != lastWaypoint && (waypoint == waypointToFollow || waypointToFollow == null))
         {
             ChangeTarget(waypoint);
         }
@@ -31,6 +31,10 @@ public class Barrel : MonoBehaviour
         else
         {
             waypointToFollow = null;
+            if (!isStatic)
+            {
+                Despawn();
+            }
         }
     }
 
@@ -46,7 +50,12 @@ public class Barrel : MonoBehaviour
     {
         dead = true;
         collider.enabled = false;
-        Destroy(gameObject, 2f);
+        Despawn();
+    }
+
+    void Despawn(float delay = 2f)
+    {
+        Destroy(gameObject, delay);
     }
 
     void Start()
@@ -68,14 +77,15 @@ public class Barrel : MonoBehaviour
             Vector3 newPosition = transform.position + force;
             transform.position = newPosition;
         }
-        else if (!isStatic)
-        {
-            Burn();
-        }
 
         if (dead)
         {
             transform.position = transform.position + ((-transform.up) * speed * Time.deltaTime);
+        }
+
+        if (transform.position.y < -100)
+        {
+            Despawn(0);
         }
     }
 }

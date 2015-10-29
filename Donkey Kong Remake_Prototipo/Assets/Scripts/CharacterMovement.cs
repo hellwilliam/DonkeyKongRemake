@@ -38,8 +38,17 @@ public class CharacterMovement : MonoBehaviour
         Move();
         Rotate();
         Jump();
-        resetPositio();
+        CheckKillPlane();
+        ResetPosition();
 	}
+
+    private void CheckKillPlane()
+    {
+        if (transform.position.y < -100)
+        {
+            Destroy(gameObject, 0);
+        }
+    }
 
     private void Move()
     {
@@ -114,7 +123,7 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    public void resetPositio()
+    public void ResetPosition()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
