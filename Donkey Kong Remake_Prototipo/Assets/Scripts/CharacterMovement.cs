@@ -38,6 +38,7 @@ public class CharacterMovement : MonoBehaviour
         Move();
         Rotate();
         Jump();
+        resetPositio();
 	}
 
     private void Move()
@@ -113,4 +114,11 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    public void resetPositio()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            transform.position = new Vector3(12.61f, 1.0f, -11.76f);
+        }
+    }
 }
