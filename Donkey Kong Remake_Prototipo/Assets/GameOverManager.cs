@@ -3,21 +3,33 @@ using System.Collections;
 
 public class GameOverManager : MonoBehaviour {
 
-    Canvas gameOverScreen;
+    public GameObject gameOverScreen;
     public CharacterMovement player;
 
 	// Use this for initialization
 	void Start () {
-        gameOverScreen = GetComponent<Canvas>();
+        gameOverScreen.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	    if (player.dead)
         {
-            gameOverScreen.enabled = true;
+            gameOverScreen.SetActive(true);
             Barrel.moving = false;
             BarrelManager.spawning = false;
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Restart();
+        }
 	}
+
+    public void Restart()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+        Barrel.moving = true;
+        BarrelManager.spawning = true;
+    }
 }

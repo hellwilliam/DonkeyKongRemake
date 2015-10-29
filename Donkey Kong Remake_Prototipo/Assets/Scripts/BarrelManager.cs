@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BarrelManager : MonoBehaviour 
 {
-    public static bool spawning = true;
+    public static bool spawning;
     public float spawnTime = 3f;
     public Transform[] spawnPoints;
     public GameObject barrel;
@@ -11,6 +11,11 @@ public class BarrelManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("Spawn", spawnTime, spawnTime);
+    }
+
+    void Awake()
+    {
+        spawning = true;
     }
 
     void Spawn()

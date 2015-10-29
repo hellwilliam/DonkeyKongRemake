@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Barrel : MonoBehaviour 
 {
-    public static bool moving = true;
+    public static bool moving;
     public Waypoint waypointToFollow;
     public float rotationSpeed = 10f;
     public float speed = 10f;
@@ -43,7 +43,8 @@ public class Barrel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("MORREU");
+            CharacterMovement player = other.gameObject.GetComponent<CharacterMovement>();
+            player.Die();
         }
     }
 
@@ -57,6 +58,11 @@ public class Barrel : MonoBehaviour
     void Despawn(float delay = 1f)
     {
         Destroy(gameObject, delay);
+    }
+
+    void Awake()
+    {
+        moving = true;
     }
 
     void Start()

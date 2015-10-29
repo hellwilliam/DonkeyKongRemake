@@ -10,8 +10,9 @@ public class CharacterMovement : MonoBehaviour
     public Ladder ladder;
     public float groundCollisionExtent = 0.5f;
     public bool grounded;
-    public bool jumped = false;
-    public bool dead = false;
+    public bool jumped;
+    public bool dead;
+    public bool won;
     int floorMask;
     Vector3 lastMove;
 
@@ -29,18 +30,23 @@ public class CharacterMovement : MonoBehaviour
 	void Start () {
         floorMask = LayerMask.GetMask("Floor");
         grounded = true;
+        jumped = false;
+        dead = false;
+        won = false;
         lastMove = transform.forward;
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        UpdateGrounded();
-        Move();
-        Rotate();
-        Jump();
-        CheckKillPlane();
-        ResetPosition();
+        if (!dead && !won)
+        {
+            UpdateGrounded();
+            Move();
+            Rotate();
+            Jump();
+            CheckKillPlane();
+        }
 	}
 
     private void CheckKillPlane()
@@ -125,16 +131,8 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         dead = true;
-    }
-
-    public void ResetPosition()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            transform.position = new Vector3(12.61f, 1.0f, -11.76f);
-        }
     }
 }

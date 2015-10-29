@@ -30,7 +30,6 @@ public class CameraInput : MonoBehaviour {
         float h = Input.GetAxis("CameraRotation") * Time.deltaTime;
         Vector3 rotation = cameraPivot.eulerAngles;
         rotation.y = rotation.y + h * ySpeed;
-        rotation.x = 0f;
         cameraPivot.eulerAngles = rotation;
     }
 }
