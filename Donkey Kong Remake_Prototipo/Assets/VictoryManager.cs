@@ -13,14 +13,14 @@ public class VictoryManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (player.won)
-        {
-            victoryScreen.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart"))
-            {
-                Restart();
-            }
-        }
+        //if (player.won)
+        //{
+        //    victoryScreen.SetActive(true);
+        //    if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart"))
+        //    {
+        //        Restart();
+        //    }
+        //}
 	}
 
     public void Restart()

@@ -34,23 +34,23 @@ public class Ladder : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterMovement>();
         moved = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (player.Ladder == this)
-        {
-            player.rigidbody.velocity = new Vector3(0, 0, 0);
-            if (!moved && !player.grounded)
-            {
-                moved = true;
-            }
-            else if (moved && player.grounded)
-            {
-                player.Ladder = null; // unlatching from the bottom, not exiting collision
-            }
-        }
+        //if (player.Ladder == this)
+        //{
+        //    player.rigidbody.velocity = new Vector3(0, 0, 0);
+        //    if (!moved && !player.grounded)
+        //    {
+        //        moved = true;
+        //    }
+        //    else if (moved && player.grounded)
+        //    {
+        //        player.Ladder = null; // unlatching from the bottom, not exiting collision
+        //    }
+        //}
 	}
 }

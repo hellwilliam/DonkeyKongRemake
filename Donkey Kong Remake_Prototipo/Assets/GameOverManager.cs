@@ -13,17 +13,17 @@ public class GameOverManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (player.dead)
-        {
-            gameOverScreen.SetActive(true);
-            Barrel.moving = false;
-            BarrelManager.spawning = false;
+        //if (player.dead)
+        //{
+        //    gameOverScreen.SetActive(true);
+        //    Barrel.moving = false;
+        //    BarrelManager.spawning = false;
 
-            if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart"))
-            {
-                Restart();
-            }
-        }
+        //    if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart"))
+        //    {
+        //        Restart();
+        //    }
+        //}
 	}
 
     public void Restart()

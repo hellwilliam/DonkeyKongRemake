@@ -27,7 +27,9 @@ public class CharacterMovement : MonoBehaviour
     }
        
     // Use this for initialization
-	void Start () {
+	void Awake () {
+        Debug.Log("RODOU");
+        cameraPivot = GameObject.Find("CameraPivot").transform;
         floorMask = LayerMask.GetMask("Floor");
         grounded = true;
         jumped = false;
@@ -41,11 +43,14 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!dead && !won)
         {
-            UpdateGrounded();
-            Move();
-            Rotate();
-            Jump();
-            CheckKillPlane();
+            if (networkView.isMine)
+            {
+                UpdateGrounded();
+                Move();
+                Rotate();
+                Jump();
+                CheckKillPlane();
+            }
         }
 	}
 
@@ -62,7 +67,7 @@ public class CharacterMovement : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Vector3 moveDirection = transform.forward;
-        
+        Debug.Log("HEY");
         if (ladder)
         {
             // let ladder control the user ?

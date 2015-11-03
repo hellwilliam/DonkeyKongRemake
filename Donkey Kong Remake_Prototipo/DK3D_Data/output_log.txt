@@ -16,15 +16,7 @@ Platform assembly: H:\desenvolvimento 3d\DonkeyKongRemake\Donkey Kong Remake_Pro
 Loading H:\desenvolvimento 3d\DonkeyKongRemake\Donkey Kong Remake_Prototipo\DK3D_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: H:\desenvolvimento 3d\DonkeyKongRemake\Donkey Kong Remake_Prototipo\DK3D_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading H:\desenvolvimento 3d\DonkeyKongRemake\Donkey Kong Remake_Prototipo\DK3D_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  1.071 seconds
+- Completed reload, in  0.979 seconds
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: H:\desenvolvimento 3d\DonkeyKongRemake\Donkey Kong Remake_Prototipo\DK3D_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: H:\desenvolvimento 3d\DonkeyKongRemake\Donkey Kong Remake_Prototipo\DK3D_Data\Managed\System.dll (this message is harmless)
-UnloadTime: 9.370939 ms
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 528.
-Total: 59.352898 ms (FindLiveObjects: 0.051094 ms CreateObjectMapping: 0.026947 ms MarkObjects: 0.345062 ms  DeleteObjects: 0.008749 ms)
-
