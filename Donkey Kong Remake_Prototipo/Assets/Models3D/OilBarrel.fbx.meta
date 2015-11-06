@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 93434628c1a9640448c024bdc55ac33f
+guid: 1e5635711f7d2844eb54fbe25d1fc8ec
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -7,7 +7,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Barrel
+    4300000: OilBarrel
     9500000: //RootNode
   materials:
     importMaterials: 1
