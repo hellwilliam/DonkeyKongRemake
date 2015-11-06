@@ -23,7 +23,7 @@ public class BarrelManager : MonoBehaviour
         if (spawning)
         {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-            Instantiate(barrel, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
+            Instantiate(barrel, spawnPoints[spawnPointIndex].position, Quaternion.identity);
         }
     }
 }
