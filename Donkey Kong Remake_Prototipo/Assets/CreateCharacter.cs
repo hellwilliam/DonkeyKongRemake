@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CreateCharacter : MonoBehaviour {
 
+    public static GameObject myPlayer;
     public GameObject player1;
     public GameObject player2;
 
