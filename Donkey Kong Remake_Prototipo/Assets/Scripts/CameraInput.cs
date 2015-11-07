@@ -22,7 +22,10 @@ public class CameraInput : MonoBehaviour {
 
     private void FollowPlayer()
     {
-        //cameraPivot.position = player.position;
+        if (CreateCharacter.myPlayer != null)
+        {
+            cameraPivot.position = player.position;
+        }
     }
 
     private void Rotate()
