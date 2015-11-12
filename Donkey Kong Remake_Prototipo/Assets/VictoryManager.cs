@@ -2,25 +2,18 @@
 using System.Collections;
 
 public class VictoryManager : MonoBehaviour {
-
+    public static VictoryManager instance;
     public GameObject victoryScreen;
-    public CharacterMovement player;
+
+    public void Win()
+    {
+        victoryScreen.SetActive(true);
+    }
 
 	// Use this for initialization
 	void Start () {
         victoryScreen.SetActive(false);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        //if (player.won)
-        //{
-        //    victoryScreen.SetActive(true);
-        //    if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart"))
-        //    {
-        //        Restart();
-        //    }
-        //}
+        instance = this;
 	}
 
     public void Restart()

@@ -8,6 +8,7 @@ public class CharacterMovement : MonoBehaviour
     public float turnSpeed = 8f;
     public float jumpForce = 5f;
     public Ladder ladder;
+    public bool ladderStartedClimb;
     public float groundCollisionExtent = 0.5f;
     public bool grounded;
     public bool jumped;
@@ -16,25 +17,35 @@ public class CharacterMovement : MonoBehaviour
     int floorMask;
     Vector3 lastMove;
 
-    public Ladder Ladder
+    public void EnterLadder(Ladder ladder)
     {
-        get { return ladder; }
-        set 
+        this.ladder = ladder;
+        rigidbody.useGravity = false;
+        rigidbody.velocity = new Vector3(0, 0, 0);
+        ladderStartedClimb = false;
+    }
+
+    public void LeaveLadder()
+    {
+        rigidbody.useGravity = true;
+        if (!grounded)
         {
-            ladder = value;
-            rigidbody.useGravity = ladder == null;
+            Vector3 impulseForward = transform.forward * ladder.impulseForwardForce;
+            Vector3 impulseUp = Vector3.up * ladder.impulseUpForce;
+            rigidbody.AddForce(impulseForward + impulseUp, ForceMode.Impulse); // unlatching from the top
         }
+        ladder = null;
     }
        
     // Use this for initialization
 	void Awake () {
-        Debug.Log("RODOU");
         cameraPivot = GameObject.Find("CameraPivot").transform;
         floorMask = LayerMask.GetMask("Floor");
         grounded = true;
         jumped = false;
         dead = false;
         won = false;
+        ladderStartedClimb = false;
         lastMove = transform.forward;
 	}
 	
@@ -52,7 +63,23 @@ public class CharacterMovement : MonoBehaviour
                 CheckKillPlane();
             }
         }
+        CheckRestartInput();
 	}
+
+    private void CheckRestartInput()
+    {
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart"))
+        {
+            if (dead)
+            {
+                GameOverManager.instance.Restart();
+            }
+            else if (won)
+            {
+                VictoryManager.instance.Restart();
+            }
+        }
+    }
 
     private void CheckKillPlane()
     {
@@ -67,7 +94,6 @@ public class CharacterMovement : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
         Vector3 moveDirection = transform.forward;
-        Debug.Log("HEY");
         if (ladder)
         {
             // let ladder control the user ?
@@ -76,6 +102,15 @@ public class CharacterMovement : MonoBehaviour
             moveDirection *= moveSpeed;
             moveDirection *= Time.deltaTime;
             transform.Translate(moveDirection, Space.World);
+
+            if (!ladderStartedClimb && !grounded)
+            {
+                ladderStartedClimb = true;
+            }
+            else if (ladderStartedClimb && grounded)
+            {
+                LeaveLadder();
+            }
         }
         else if (grounded)
         {
@@ -139,5 +174,12 @@ public class CharacterMovement : MonoBehaviour
     public void Die()
     {
         dead = true;
+        GameOverManager.instance.GameOver();
+    }
+
+    public void Win()
+    {
+        won = true;
+        VictoryManager.instance.Win();
     }
 }

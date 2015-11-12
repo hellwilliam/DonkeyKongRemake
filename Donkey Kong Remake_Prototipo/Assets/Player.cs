@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreateCharacter : MonoBehaviour {
+public class Player : MonoBehaviour {
 
-    public static GameObject myPlayer;
-    public GameObject player1;
-    public GameObject player2;
+    public static GameObject me;
+    public GameObject player1prefab;
+    public GameObject player2prefab;
 
 	// Use this for initialization
 	void Start () {
@@ -14,13 +14,14 @@ public class CreateCharacter : MonoBehaviour {
 
     void DoThings()
     {
+        
         if (Network.peerType == NetworkPeerType.Client)
         {
-            Network.Instantiate(player1, new Vector3(9.5f, 1, -12), Quaternion.identity, 0);
+            me = (GameObject)Network.Instantiate(player1prefab, new Vector3(9.5f, 1, -12), Quaternion.identity, 0);
         }
         else if (Network.peerType == NetworkPeerType.Server)
         {
-            Network.Instantiate(player2, new Vector3(7.5f, 1, -12), Quaternion.identity, 0);
+            me = (GameObject)Network.Instantiate(player2prefab, new Vector3(7.5f, 1, -12), Quaternion.identity, 0);
         }
         else
         {
