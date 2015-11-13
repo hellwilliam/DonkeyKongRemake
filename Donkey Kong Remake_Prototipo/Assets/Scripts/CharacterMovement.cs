@@ -173,13 +173,19 @@ public class CharacterMovement : MonoBehaviour
 
     public void Die()
     {
-        dead = true;
-        GameOverManager.instance.GameOver();
+        if (networkView.isMine)
+        {
+            dead = true;
+            GameOverManager.instance.GameOver();
+        }
     }
 
     public void Win()
     {
-        won = true;
-        VictoryManager.instance.Win();
+        if (networkView.isMine)
+        {
+            won = true;
+            VictoryManager.instance.Win();
+        }
     }
 }
