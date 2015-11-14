@@ -119,7 +119,8 @@ public class CharacterMovement : MonoBehaviour
             moveDirection *= moveSpeed;
             moveDirection *= Time.deltaTime;
             lastMove = moveDirection;
-            transform.Translate(moveDirection, Space.World);
+            rigidbody.AddForce(moveDirection, ForceMode.VelocityChange);
+            // transform.Translate(moveDirection, Space.World);
         }
         else if (jumped)
         {
