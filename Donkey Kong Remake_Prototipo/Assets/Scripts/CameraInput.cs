@@ -4,7 +4,6 @@ using System.Collections;
 public class CameraInput : MonoBehaviour {
 
     public Transform cameraPivot;
-    public Transform player;
     public float minZ = 0;
     public float maxZ = 90;
 
@@ -22,9 +21,9 @@ public class CameraInput : MonoBehaviour {
 
     private void FollowPlayer()
     {
-        if (CreateCharacter.myPlayer != null)
+        if (Player.me != null)
         {
-            cameraPivot.position = player.position;
+            cameraPivot.position = Player.me.transform.position;
         }
     }
 

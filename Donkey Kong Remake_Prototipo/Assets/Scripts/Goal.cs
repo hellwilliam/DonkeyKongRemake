@@ -8,7 +8,7 @@ public class Goal : MonoBehaviour {
         if (collider.gameObject.CompareTag("Player"))
         {
             CharacterMovement player = collider.gameObject.GetComponent<CharacterMovement>();
-            player.won = true;
+            player.Win();
         }
     }
 }
