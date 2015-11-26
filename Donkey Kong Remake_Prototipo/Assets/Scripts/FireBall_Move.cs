@@ -4,18 +4,28 @@ using System.Collections;
 public class FireBall_Move : MonoBehaviour 
 {
     //My Code-------------------------------------------------------------------------
-    public float stepSpeed = 2f;
-    public Transform moveFireBall;
-    public Vector3 moveFoward;
+    //public float stepSpeed = 2f;
+    //public Transform moveFireBall;
+    //public Vector3 moveFoward = Vector3.zero;
+    public NavMeshAgent nav;
+    public Transform target;
 
-    void Speed()
+
+    //void Speed()
+    //{
+    //    moveFoward.z = 1 * Time.deltaTime;
+    //}
+
+    void Awake()
     {
-        moveFoward.z = 1 * Time.deltaTime;
+        nav = GetComponent<NavMeshAgent>();
     }
     
     void Update ()
     {
-        moveFireBall.rigidbody.velocity = moveFoward;
+        nav.SetDestination(target.position);
+        //Speed();
+        //moveFireBall.rigidbody.AddRelativeForce(moveFoward * 20, ForceMode.VelocityChange);
     }
     //--------------------------------------------------------------------------------
 
