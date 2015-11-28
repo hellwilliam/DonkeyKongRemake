@@ -9,12 +9,37 @@ public class FireBall_Move : MonoBehaviour
     //public Vector3 moveFoward = Vector3.zero;
     public NavMeshAgent nav;
     public Transform target;
+    public Ladder ladder;
+    public bool ladderStartedClimb;
+    public bool grounded;
 
 
     //void Speed()
     //{
     //    moveFoward.z = 1 * Time.deltaTime;
     //}
+
+    public void EnterLadder(Ladder ladder)
+    {
+        Debug.Log ("Entering");
+        this.ladder = ladder;
+        rigidbody.useGravity = false;
+        rigidbody.velocity = new Vector3 (0, 0, 0);
+        ladderStartedClimb = false;
+    }
+
+    public void LeaveLadder ()
+    {
+        Debug.Log ("Leaving");
+        rigidbody.useGravity = true;
+        if (!grounded)
+        {
+            Vector3 impulseForward = transform.forward * ladder.impulseForwardForce;
+            Vector3 impulseUp = Vector3.up * ladder.impulseUpForce;
+            rigidbody.AddForce (impulseForward + impulseUp, ForceMode.Impulse);
+        }
+        ladder = null;
+    }
 
     void Awake()
     {
