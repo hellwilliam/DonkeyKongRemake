@@ -77,22 +77,22 @@ public class Barrel : MonoBehaviour
         {
             if (waypointToFollow != null)
             {
-                Vector3 pos = waypointToFollow.transform.position - transform.position;
+                Vector3 pos = waypointToFollow.transform.position - rigidbody.position;
                 pos.y = 0; // force rotation on Y
                 Quaternion myRot = Quaternion.LookRotation(pos);
-                transform.rotation = Quaternion.Slerp(transform.rotation, myRot, rotationSpeed * Time.deltaTime);
+                rigidbody.rotation = Quaternion.Slerp(rigidbody.rotation, myRot, rotationSpeed * Time.deltaTime);
 
                 Vector3 force = transform.forward * (Time.deltaTime * speed);
-                Vector3 newPosition = transform.position + force;
-                transform.position = newPosition;
+                Vector3 newPosition = rigidbody.position + force;
+                rigidbody.position = newPosition;
             }
 
             if (dead)
             {
-                transform.position = transform.position + ((-transform.up) * speed * Time.deltaTime);
+                rigidbody.position = rigidbody.position + ((-transform.up) * speed * Time.deltaTime);
             }
 
-            if (transform.position.y < -10)
+            if (rigidbody.position.y < -10)
             {
                 Despawn(0);
             }

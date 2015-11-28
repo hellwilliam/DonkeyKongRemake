@@ -26,6 +26,7 @@ public class Player : MonoBehaviour {
         else
         {
             Debug.Log("NOT CONNECTED");
+            me = (GameObject)Instantiate(player1prefab, new Vector3(9.5f, 1, -12), Quaternion.identity);
         }
     }
 

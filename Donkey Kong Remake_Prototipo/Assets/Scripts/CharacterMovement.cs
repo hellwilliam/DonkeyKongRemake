@@ -54,7 +54,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (!dead && !won)
         {
-            if (networkView.isMine)
+            if (networkView.isMine || (!Network.isServer && !Network.isClient))
             {
                 UpdateGrounded();
                 Move();
@@ -101,7 +101,7 @@ public class CharacterMovement : MonoBehaviour
             moveDirection = v * Vector3.up;
             moveDirection *= moveSpeed;
             moveDirection *= Time.deltaTime;
-            transform.Translate(moveDirection, Space.World);
+            rigidbody.position += moveDirection;
 
             if (!ladderStartedClimb && !grounded)
             {
@@ -119,12 +119,11 @@ public class CharacterMovement : MonoBehaviour
             moveDirection *= moveSpeed;
             moveDirection *= Time.deltaTime;
             lastMove = moveDirection;
-            rigidbody.AddForce(moveDirection, ForceMode.VelocityChange);
-            // transform.Translate(moveDirection, Space.World);
+            rigidbody.position += moveDirection;
         }
         else if (jumped)
         {
-            transform.Translate(lastMove, Space.World);
+            rigidbody.position += lastMove;
         }
     }
 
@@ -167,7 +166,7 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && grounded && ladder == null)
         {
-            rigidbody.velocity += jumpForce * Vector3.up;
+            rigidbody.AddForce(jumpForce * Vector3.up);
             jumped = true;
         }
     }
