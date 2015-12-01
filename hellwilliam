@@ -1,0 +1,598 @@
+[33mcommit 241613db5d27ab034219fd55ef37931e0e674bf9[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 15:05:31 2015 -0200
+
+    Changes in ladder material
+
+[33mcommit d2315f399b6a937bfff479194e542a7551c4e3cf[m
+Merge: 5c2987b ee834ca
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 15:04:18 2015 -0200
+
+    Merge branch 'master' of https://github.com/hellwilliam/DonkeyKongRemake
+
+[33mcommit 5c2987bd770f24b4f196b411b0e2117967367071[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 15:03:01 2015 -0200
+
+    Changes
+
+[33mcommit ee834cadb8f8807c040d98a0efeb3ae297600d98[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:59:59 2015 -0200
+
+    Delete Material_001.mat.meta
+
+[33mcommit 5243a6fbf3fa728159d0472d4054181837f86ff7[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:59:52 2015 -0200
+
+    Delete Material_001.mat
+
+[33mcommit 8ecd9e14d3b593eec19e7bad472a4943bca01fc9[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:58:58 2015 -0200
+
+    Delete Material_005.mat.meta
+
+[33mcommit 8e06a50edbb7d9f19173a98fbd7bb93f50d9138d[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:58:52 2015 -0200
+
+    Delete Material_005.mat
+
+[33mcommit 68e3cb5bfa35c2c4166d67c465423f85885d60f0[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:58:46 2015 -0200
+
+    Delete Material_004.mat.meta
+
+[33mcommit a383805d1632ce573ecb5ca6cdfb5a51cd4a637a[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:58:39 2015 -0200
+
+    Delete Material_004.mat
+
+[33mcommit d4b6dd2ce4b5490f50d6aa7d174f2a040c4f0eea[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:58:32 2015 -0200
+
+    Delete Material_003.mat.meta
+
+[33mcommit 50126477820b6fb728c3423eca7298b6df8ba4cc[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:58:05 2015 -0200
+
+    Delete Material_003.mat
+
+[33mcommit 4b6a3dfccd92596fa4d8cb86f38a926c0cdb154c[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:57:59 2015 -0200
+
+    Delete Material_002.mat.meta
+
+[33mcommit b4ed52aad8e5b5a28473cdb5977cfd1eecb3461c[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:57:52 2015 -0200
+
+    Delete Material_002.mat
+
+[33mcommit 28ba57fca0a4e0e36e2676b3bd39469c1c06089b[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:57:41 2015 -0200
+
+    Delete Barrel_skull.fbx
+
+[33mcommit cad70e7d4fbc374237df02dd78dc0a0f50ad5789[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:54:54 2015 -0200
+
+    Deleted some files
+
+[33mcommit dcb9a127835e47d2ed55218417724661294e4fea[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:46:36 2015 -0200
+
+    Adjustments on th scene
+
+[33mcommit 4fb0277df1acacd514bad45c643e4ad4c4543627[m
+Merge: f6038df ae7b64c
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:35:04 2015 -0200
+
+    Merge branch 'master' of https://github.com/hellwilliam/DonkeyKongRemake
+
+[33mcommit ae7b64c2182cbda7bd986b6ff1559acf914f870d[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:34:30 2015 -0200
+
+    Rename Barrel_skull.fbx.meta to Barrel_skull.fbx
+
+[33mcommit 02f73a8d18f2e2f64cae08618429ab7b4ff0302c[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:28:15 2015 -0200
+
+    Delete Barrel.fbm.meta
+
+[33mcommit 84610972854c8c21ff0d348b905c9deb32c79a6e[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:28:06 2015 -0200
+
+    Delete Barrel.fbx.meta
+
+[33mcommit d0a79715173f357905aec154d75f47fc5112df8c[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:27:59 2015 -0200
+
+    Delete Barrel_skull.fbx
+
+[33mcommit d32c6afa4c75d36dbdeac982690d60b9758276d9[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:27:50 2015 -0200
+
+    Delete OilBarrel.fbx.meta
+
+[33mcommit 84c9d68ec7558e595fe9cb514ddc374133bb50fe[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:27:43 2015 -0200
+
+    Delete OilBarrel.fbx
+
+[33mcommit c65beb0ff948833d72f1e1757b47bc54750a161a[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:27:29 2015 -0200
+
+    Delete Ladders.obj.meta
+
+[33mcommit 4d3bba6463fd45c654d685360d5bfececcaf9b16[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:27:18 2015 -0200
+
+    Delete Ladders.obj
+
+[33mcommit f6038dfef06ca62bb0a9c1236b9ad8eb8de7d813[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:19:50 2015 -0200
+
+    Cleaning cenes
+
+[33mcommit 46a73c709b12c54e1cdaa41038e6ca44ed51ccb1[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 14:18:24 2015 -0200
+
+    Adding new ladders and adjusting cenes
+
+[33mcommit 5e9d1f68467f96550bd8660121e0a0036bfc9640[m
+Merge: 3fd2e31 0b0a844
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Mon Nov 30 12:28:41 2015 -0200
+
+    Merge branch 'master' of https://github.com/hellwilliam/DonkeyKongRemake
+
+[33mcommit 0b0a84425c1d1522385f578d71183ab9393136ac[m
+Merge: 0b589ae e3896f6
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 27 22:53:17 2015 -0200
+
+    Merge branch 'master' of https://github.com/hellwilliam/DonkeyKongRemake
+
+[33mcommit 0b589ae7a516c3e2a22ec07cabcd457e3590a24c[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 27 22:52:05 2015 -0200
+
+    Barril nao colide com barril e bola de fogo
+
+[33mcommit e3896f6d8b963e07c5fe27562635ec1d8c7b216d[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Fri Nov 27 21:58:56 2015 -0200
+
+    player1 prefab
+
+[33mcommit 7654fc2b964519500c06a5799c3befd162db5133[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Fri Nov 27 21:58:16 2015 -0200
+
+    Rigidbody based movement
+
+[33mcommit ba9fd3b73d22b86bb928212f502990b7d62050d7[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 27 20:56:51 2015 -0200
+
+    Ground texture
+
+[33mcommit 026832a49852af10876e51d125becd7848005dcb[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 27 20:33:53 2015 -0200
+
+    Ground texture
+
+[33mcommit 3fd2e314b6e3c4045999fd9c7ac429a5c312e3f6[m
+Merge: 5ca9185 1daf7ce
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Thu Nov 26 23:13:50 2015 -0200
+
+    Merge branch 'master' of https://github.com/hellwilliam/DonkeyKongRemake
+
+[33mcommit 5ca9185033c3d6a0079417644b7f8b9583e987a8[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Thu Nov 26 23:11:59 2015 -0200
+
+    Doing stuffs
+
+[33mcommit 1daf7ce2542190117fb4f9d8f540283e2efc5876[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Thu Nov 26 21:24:53 2015 -0200
+
+    Programming DonkeyKong
+
+[33mcommit 6ee2d71caf45362c351beafeaa52a6afe4e30bc5[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Thu Nov 26 21:09:25 2015 -0200
+
+    Cleaning
+
+[33mcommit c565e86a1c28e5d625d53c6b779b878f1bca4183[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Thu Nov 26 21:07:57 2015 -0200
+
+    Fireball moviment
+
+[33mcommit b594422f09dce9d7cb8d255b8f8c2c41efb08266[m
+Merge: 864f07e 20d10ad
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Tue Nov 24 19:46:08 2015 -0200
+
+    Merge branch 'master' of https://github.com/hellwilliam/DonkeyKongRemake
+    
+    Conflicts:
+    	Donkey Kong Remake_Prototipo/Assets/Donkey Kong_Prototipo.unity
+
+[33mcommit 864f07e6a9a9289b833d877600bf2e6a1f466867[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Tue Nov 17 21:19:25 2015 -0200
+
+    Tentativa de movimentacao da FireBall
+
+[33mcommit 20d10ad0ab5a93ac7bd60eab129288881667a6f9[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Fri Nov 13 22:24:06 2015 -0200
+
+    Connect script
+
+[33mcommit 752ea389fac0212874164154de125de85386b437[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Fri Nov 13 22:03:07 2015 -0200
+
+    network ui, tentative changes to rigidbody physics
+
+[33mcommit e8f513c838c64b803c64672dd2c349a2b4cbadf0[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Thu Nov 12 22:20:03 2015 -0200
+
+    Bolinha de fogo disparando adoidado
+
+[33mcommit 9af541d4d847906af02756fd09e9ceda6433e93f[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Nov 12 22:17:30 2015 -0200
+
+    game over/victory only for your player
+
+[33mcommit c578d87cffc2e9e9a178d55fa1fb0b2bda1209bc[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Nov 12 21:50:16 2015 -0200
+
+    atualizando cena
+
+[33mcommit ad3377ca88a42060a408d3c20ccc556c694980fe[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Nov 12 21:42:25 2015 -0200
+
+    refatoração para multiplayer
+
+[33mcommit 9e1c5ed521973e83963021c1e2099ca760ade344[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Thu Nov 12 20:30:06 2015 -0200
+
+    Iniocio do script do Donkey e da bola de fogo
+
+[33mcommit a48b7488b9fbafae2b38f11a894c2efa13ec8f6e[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 6 22:43:27 2015 -0200
+
+    Coisas
+
+[33mcommit 1192dc59fba70e9056f0cd26e20dddb549d17d37[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 6 22:41:20 2015 -0200
+
+    Mais coisas foram feitas
+
+[33mcommit af5dec874ac4904d04ec3686baa691d94e0c7026[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 6 22:39:26 2015 -0200
+
+    Coisas foram feiras
+
+[33mcommit 2039d4c2a471051bb160a5064069119b6ac6a0ff[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 6 21:39:30 2015 -0200
+
+    Removed
+
+[33mcommit 2cb7bc8ec523f4cc9548f04823cc9f317664f0bc[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 6 21:38:18 2015 -0200
+
+    Barrel FINALY working
+
+[33mcommit 3239f14dbd155a9451ccf4887243bfcf240da86f[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 6 20:55:01 2015 -0200
+
+    Cleaning up
+
+[33mcommit 86eb4c32a9a960194f5662c910a56644e22547c5[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Nov 6 20:53:31 2015 -0200
+
+    Added new barrels models
+
+[33mcommit 2b32e619ccbde3b146815d83fb28f373172eaace[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Tue Nov 3 20:55:53 2015 -0200
+
+    multiplayer 1.0
+
+[33mcommit 00531f880581c496a33fc04d10be2e18eb2600bd[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Sat Oct 31 13:08:07 2015 -0200
+
+    Limpeza
+
+[33mcommit 35fce087807aa6bcf4d2821e4410e596eae9f9b2[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Sat Oct 31 13:06:57 2015 -0200
+
+    Player 1 e 2
+
+[33mcommit 7ae6793373f8db05036261234afcce033f105d5d[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Oct 30 22:25:05 2015 -0200
+
+    Removidos
+
+[33mcommit 9bef9c33cd56e7acf6196f0e29b863402ffeef22[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Oct 30 22:22:34 2015 -0200
+
+    Personagem Mario
+
+[33mcommit 56546f0b93a855fe64bca492b3608d93a000306f[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Fri Oct 30 22:35:47 2015 -0200
+
+    beginning of network stuff
+
+[33mcommit 8ea81151b9d456694169196771c636580caeaf0c[m
+Author: unknown <15192026@W1801356.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 19:12:22 2015 -0200
+
+    build and final fixes
+
+[33mcommit 869c117ea8321eda745ce323cefb6b7b05d4153c[m
+Author: unknown <15192026@W1801356.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 19:07:47 2015 -0200
+
+    No Jumping sign
+
+[33mcommit 31a97e8cf66c0f3dd617d61b796cd745aea3bc5f[m
+Author: unknown <15192026@W1801356.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 18:48:42 2015 -0200
+
+    restart with buttons
+
+[33mcommit c0a1ae12577e9a11a9292e0548b5951c2a9ec91f[m
+Author: unknown <15191901@W1801232.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 18:35:15 2015 -0200
+
+    Escadas
+
+[33mcommit f3279554d84828716241e8b7327cb00eea75894c[m
+Author: unknown <15192026@W1801356.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 18:31:29 2015 -0200
+
+    game over stuff
+
+[33mcommit 9601b5cd30a123b3f57f6f7e7de6cb37cc1e26a0[m
+Author: unknown <15191901@W1801232.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 18:23:01 2015 -0200
+
+    Organizacao dos arquivos
+
+[33mcommit c7fd9f0f11e4dc7af6d60e9bad6d91cb56741190[m
+Author: unknown <15191901@W1801232.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 18:17:59 2015 -0200
+
+    Aperfeicoamento dos modelos
+
+[33mcommit 2d4f766ed07e2d6914442afcdcdcc8e582d449f9[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 17:36:11 2015 -0200
+
+    game over initial
+
+[33mcommit e485d37b6e79390c6f70be7b52bbea76b24f4fd9[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 17:24:56 2015 -0200
+
+    more game end stuff
+
+[33mcommit 196ea5061e091177c78ebcacd183847360f24217[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Oct 29 16:18:15 2015 -0200
+
+    adding goal, better waypoint routing, better barrel despawn, fixing audio loop issues
+
+[33mcommit 476010af9811e38b5445bcc4289de9bfae92d9a4[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Thu Oct 29 14:37:19 2015 -0200
+
+    Modelos modificados
+
+[33mcommit 9509b82d11079f2ad86b378892c4e5460be5d82d[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Thu Oct 29 02:13:52 2015 -0200
+
+    Musica ambiente
+
+[33mcommit 8df72169c3eaf366ed37d686632f1fb5e126bedc[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Thu Oct 29 01:23:02 2015 -0200
+
+    Limpesa dos arquivos
+
+[33mcommit 81446482e60c7d65e59e75a0b53117a3103ec5e3[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Thu Oct 29 01:10:52 2015 -0200
+
+    Waypoints distribuidos e barris rolando - Cenario ajustado
+
+[33mcommit 5430d49bdab987901545ad5b66e23750ca4430e7[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Wed Oct 28 20:30:43 2015 -0200
+
+    Waypoints no prototipo bugando
+
+[33mcommit 90d92538b16a3e4722a5213dbb73d8a5cf5c2620[m
+Author: Diogo Ribeiro <diogoriba@gmail.com>
+Date:   Wed Oct 28 18:40:04 2015 -0200
+
+    Barrel damage method structure, barrel destruction method structure, fixing player rotation warnings on console, adding a score zone to barrels
+
+[33mcommit 0052dc269a6bd8e29a22f9a669c5e7addd855ef7[m
+Author: Diogo Ribeiro <diogoriba@gmail.com>
+Date:   Wed Oct 28 18:07:55 2015 -0200
+
+    updating ladder prefab, adding difference between falling and jumping off, making player look at ladder when using it
+
+[33mcommit a27f6440e1d774ab68fe712f0e809f56240629b2[m
+Author: Diogo Ribeiro <diogoriba@gmail.com>
+Date:   Wed Oct 28 17:42:39 2015 -0200
+
+    Turn player to where he's moving, slerp rotation, keep momentum when not grounded, add exit force to ladder.
+
+[33mcommit a1a6f7ca3e2baa0c9fd3f4254cfeb6010cad5f42[m
+Author: Diogo Ribeiro <diogoriba@gmail.com>
+Date:   Wed Oct 28 13:31:57 2015 -0200
+
+    adding barrel manager, fixing movement jitter
+
+[33mcommit c4cd05bef7a6c3c641f1e309b565c6edfa839810[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Tue Oct 27 22:42:14 2015 -0200
+
+    scene and tag changes
+
+[33mcommit f08da6c783ddf65023b316c5ea6c176552ad18fd[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Tue Oct 27 22:39:57 2015 -0200
+
+    Getting on and off ladders, cleaning up project
+
+[33mcommit 51d43192a8f46ea5135b3f67f3e9e926a583737c[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Tue Oct 27 22:06:54 2015 -0200
+
+    BarrelManager
+
+[33mcommit e36d4372f8bcba0bfcfb1e447bc87659960abd40[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Tue Oct 27 18:19:23 2015 -0200
+
+    Jump test
+
+[33mcommit 5e3c5cb2ec363c217ed170e781cfe5bb3360eda7[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Oct 23 22:37:49 2015 -0200
+
+    Escadas
+
+[33mcommit 26a81f9714b2e8b453dc7202920f5ac6fa4f573a[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Fri Oct 23 22:21:50 2015 -0200
+
+    basic character controller
+
+[33mcommit 02bc1c9bca68046dc388c8a3f15c76246cd8f473[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Oct 22 21:13:23 2015 -0200
+
+    camera
+
+[33mcommit bd379a4f2dfe6b3f5995f4968d9eb0711b50e911[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Oct 22 20:47:58 2015 -0200
+
+    barrel rotation smoothing, rigidbody based gravity and better colliders
+
+[33mcommit c2a63f6503673012e2c0522d5b79ecaacef08c56[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Oct 22 19:53:44 2015 -0200
+
+    unsaved changes on prefabs
+
+[33mcommit 0baf93a76680f5a2a807eae6eb42363839226f3f[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Tue Oct 20 21:17:28 2015 -0200
+
+    Waypoints and basic barrel movement
+
+[33mcommit e883712f78089a194239ca4aded11b5914017d80[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Tue Oct 20 18:14:04 2015 -0200
+
+    Movimentação simples
+
+[33mcommit bf8aa30f3d739b29470c1ac9274f04b70000ac0b[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Tue Oct 20 18:03:27 2015 -0200
+
+    Movimento simples barril
+
+[33mcommit 92e9d4e614456fc8a210655c622237afdd0cdd10[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Tue Oct 20 18:00:38 2015 -0200
+
+    Movimentação simples barril
+
+[33mcommit 1ff372efc45032ddbbb4f2066a9f3258e2e7c921[m
+Author: unknown <15192026@W1801216.portoalegre.pucrsnet.br>
+Date:   Thu Oct 15 22:47:32 2015 -0300
+
+    Beginning control/camera
+
+[33mcommit a65dc5ad5d44fa772235c7cd60abc2f38818d07d[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Thu Oct 15 22:48:31 2015 -0300
+
+    Waypoint bugando
+
+[33mcommit 6a89b11b0fac01b246e94fae779071fc50756733[m
+Author: unknown <15191901@W1801208.portoalegre.pucrsnet.br>
+Date:   Thu Oct 15 20:43:05 2015 -0300
+
+    Waypoint project
+
+[33mcommit 2fd9d925b9a973cf342385a37d00fc90c0c123d1[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Sun Sep 6 19:01:46 2015 -0300
+
+    Arquivo iniciais do projeto
+    
+    Arquivos do prototipo do jogo.
+
+[33mcommit e083b47b5e8815027d03952933a556ef2f966282[m
+Author: hellwilliam <gbourscheidt@hotmail.com>
+Date:   Sun Sep 6 18:33:24 2015 -0300
+
+    Initial commit
