@@ -12,12 +12,31 @@ public class FireBall_Move : MonoBehaviour
     public Ladder ladder;
     public bool ladderStartedClimb;
     public bool grounded;
+    //public Player player;
 
 
     //void Speed()
     //{
     //    moveFoward.z = 1 * Time.deltaTime;
     //}
+
+    //void playerToFollow(Transform other)
+    //{
+    //    if (other.gameObject.CompareTag("player"))
+    //    {
+    //        CharacterMovement player = other.gameObject.GetComponent<CharacterMovement>();
+    //    }
+    //}
+
+    void OnCollisionEnter(Collision other)
+    {
+        Debug.Log("Collide with player");
+        if (other.gameObject.CompareTag("Player"))
+        {
+            CharacterMovement player = other.gameObject.GetComponent<CharacterMovement>();
+            player.Die();
+        }
+    }
 
     public void EnterLadder(Ladder ladder)
     {
@@ -49,6 +68,7 @@ public class FireBall_Move : MonoBehaviour
     void Update ()
     {
         nav.SetDestination(target.position);
+   
         //Speed();
         //moveFireBall.rigidbody.AddRelativeForce(moveFoward * 20, ForceMode.VelocityChange);
     }
