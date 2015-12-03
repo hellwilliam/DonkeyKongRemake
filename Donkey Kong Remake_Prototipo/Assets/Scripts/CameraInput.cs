@@ -10,9 +10,14 @@ public class CameraInput : MonoBehaviour {
     public float ySpeed = 90;
     public float zSpeed = 45;
 
-    public float speed = 55;
-    private float rotation = 0;
-    private Quaternion qTo = Quaternion.identity;
+    //public float rotationSpeed = 90;
+    //public Vector3 rotation;
+
+    //public float speed = 55;
+    //private float rotation = 0;
+    //private Quaternion qTo = Quaternion.identity;
+
+    //public Vector3 rotation;
       
 
     //public Input m_prevGetAxis;
@@ -28,19 +33,7 @@ public class CameraInput : MonoBehaviour {
         Rotate();
         FollowPlayer();
 
-        //if (Input.GetKeyDown(KeyCode.Q))
-        //{
-        //    rotation += 90;
-        //    qTo = Quaternion.Euler(0, 0, rotation);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    rotation = -90;
-        //    qTo = Quaternion.Euler(0, 0, rotation);
-        //}
-
-        //transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speed * Time.deltaTime);
+        
 	}
 
     private void FollowPlayer()
@@ -53,6 +46,26 @@ public class CameraInput : MonoBehaviour {
 
     private void Rotate()
     {
+        //float rotatio = Input.GetAxis("CameraRotation") * rotationSpeed;
+        //rotation *= Time.deltaTime;
+        //transform.Rotate(0, rotation, 0);
+
+
+        //if (Input.GetKeyDown(KeyCode.Q))
+        //{
+        //    rotation += 90;
+        //    qTo = Quaternion.Euler(0, 0, rotation);
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    rotation -= 90;
+        //    qTo = Quaternion.Euler(0, 0, rotation);
+        //}
+
+        //transform.rotation = Quaternion.RotateTowards(transform.rotation, qTo, speed * Time.deltaTime);
+
+
         float h = Input.GetAxis("CameraRotation") * Time.deltaTime;
         Vector3 rotation = cameraPivot.eulerAngles;
         rotation.y = rotation.y + h * ySpeed;
