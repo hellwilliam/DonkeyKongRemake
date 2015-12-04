@@ -5,65 +5,59 @@ public class Connect : MonoBehaviour
 {
 	public string connectToIP = "127.0.0.1";
 	public int connectPort = 25001;
+    public string nickname;
 
-    void OnGUI()
+    public const int MAX_PLAYERS = 4;
+    public PlayerData[] players = new PlayerData[MAX_PLAYERS];
+
+    public PlayerData FindByNetworkPlayer(NetworkPlayer player)
     {
-        if (Network.peerType == NetworkPeerType.Disconnected)
+        foreach (PlayerData playerData in players)
         {
-            // We are currently disconnected: Not a client or host
-            GUILayout.Label("Connection status: Disconnected");
-
-            this.connectToIP = GUILayout.TextField(connectToIP, GUILayout.MinWidth(100));
-            this.connectPort = int.Parse(GUILayout.TextField(this.connectPort.ToString()));
-
-            GUILayout.BeginVertical();
-
-            if (GUILayout.Button("Connect as client"))
+            if (playerData.player == player)
             {
-                // Connect ot the "connectToIP" and "connectPort" as entered via the GUI
-                // Ignore the NAT for now
-                // OBSOLETE: Network.useNat = false;
-                Network.Connect(connectToIP, connectPort);
+                return playerData;
             }
+        }
+        return null;
+    }
 
-            if (GUILayout.Button("Start Server"))
+    void OnPlayerDisconnected(NetworkPlayer player)
+    {
+        PlayerData quitter = FindByNetworkPlayer(player);
+        for (int i = 0; i < MAX_PLAYERS; i++)
+        {
+            if (players[i] == quitter)
             {
-                // Start a server for 32 clients u sing the "connectPort" given via the GUI
-                // Ignore the nat for now
-                // OBSOLETE: Network.useNat = false;
-                // OBSOLETE: Network.InitializeServer(32, connectPort);
-                Network.InitializeServer(32, connectPort, false);
+                players[i] = null;
+                break;
             }
+        }
+    }
 
-            GUILayout.EndVertical();
+    [RPC]
+    public void SetName(string name, NetworkMessageInfo info)
+    {
+        PlayerData player = new PlayerData();
+        player.name = name;
+        player.player = info.sender;
+        int playerIndex = -1;
+        for (int i = 0; i < MAX_PLAYERS; i++)
+        {
+            if (players[i] == null)
+            {
+                playerIndex = i;
+                break;
+            }
+        }
+        if (playerIndex >= 0)
+        {
+            players[playerIndex] = player;
+            Debug.Log("PLAYER LOGGED IN AS " + player.name);
         }
         else
         {
-            // We've got a connection!
-
-            if (Network.peerType == NetworkPeerType.Connecting)
-            {
-                GUILayout.Label("Connection status: Connecting");
-            }
-            else if (Network.peerType == NetworkPeerType.Client)
-            {
-                GUILayout.Label("Connection status: Client!");
-                GUILayout.Label("Ping to server: " + Network.GetAveragePing(Network.connections[0]));
-            }
-            else if (Network.peerType == NetworkPeerType.Server)
-            {
-                GUILayout.Label("Connection status: Server!");
-                GUILayout.Label("Connections: " + Network.connections.Length);
-                if (Network.connections.Length >= 1)
-                {
-                    GUILayout.Label("Ping to first player: " + Network.GetAveragePing(Network.connections[0]));
-                }
-            }
-
-            if (GUILayout.Button("Disconnect"))
-            {
-                Network.Disconnect(200);
-            }
+            Debug.Log("CANNOT LOG IN PLAYER -- ALL SLOTS TAKEN");
         }
     }
 
@@ -77,6 +71,11 @@ public class Connect : MonoBehaviour
         connectPort = int.Parse(port);
     }
 
+    public void UpdateName(string name)
+    {
+        nickname = name;
+    }
+
     public void ConnectToServer()
     {
         Network.Connect(connectToIP, connectPort);
@@ -84,68 +83,35 @@ public class Connect : MonoBehaviour
 
     public void StartServer()
     {
-        Network.InitializeServer(32, connectPort, false);
+        Network.InitializeServer(MAX_PLAYERS, connectPort, false);
     }
 
+    void OnConnectedToServer()
+    {
+        SetName();
+    }
 
-    //// Client functions called by Unity
-    //void OnConnectedToServer()
-    //{
-    //    Debug.Log("This CLIENT has connected to a server");
-    //    gameObject.SetActive(false);
-    //}
+    private void SetName()
+    {
+        if (string.IsNullOrEmpty(nickname))
+        {
+            nickname = "Anonymous" + Random.Range(0, 9999);
+        }
+        PlayerData.Me.name = nickname;
+        Debug.Log("Player name: " + PlayerData.Me.name);
+        if (Network.isServer)
+        {
+            NetworkMessageInfo msg = new NetworkMessageInfo();
+            SetName(nickname, msg);
+        }
+        else
+        {
+            networkView.RPC("SetName", RPCMode.Server, nickname);
+        }
+    }
 
-    //void OnServerInitialized()
-    //{
-    //    Debug.Log("Server initialized and ready");
-    //    gameObject.SetActive(false);
-    //}
-
-    //void OnDisconnectedFromServer(NetworkDisconnection info)
-    //{
-    //    Debug.Log("This SERVER OR CLIENT has disconnected from a server");
-    //    gameObject.SetActive(true);
-    //}
-
-    //void OnFailedToConnect(NetworkConnectionError error)
-    //{
-    //    Debug.Log("Could not connect to server: " + error);
-    //}
-
-    //// Server functions called by Unity
-    //void OnPlayerConnected(NetworkPlayer player)
-    //{
-    //    Debug.Log("Player connected from: " + player.ipAddress + ":" + player.port);
-    //}
-
-    //void OnPlayerDisconnected(NetworkPlayer player)
-    //{
-    //    Debug.Log("Player disconnected from: " + player.ipAddress + ":" + player.port);
-    //}
-
-    //// OTHERS:
-    //void OnFailedToConnectToMasterServer(NetworkConnectionError info)
-    //{
-    //    Debug.Log("Could not connect to master server: " + info);
-    //}
-
-    //void OnNetworkInstantiate(NetworkMessageInfo info)
-    //{
-    //    Debug.Log("New object instantiated by " + info.sender);
-    //}
-
-    //void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info)
-    //{
-    //    // Custom code here
-    //}
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    void OnServerInitialized()
+    {
+        SetName();
+    }
 }

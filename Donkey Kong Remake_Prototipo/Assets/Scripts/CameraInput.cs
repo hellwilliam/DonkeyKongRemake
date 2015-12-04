@@ -38,9 +38,9 @@ public class CameraInput : MonoBehaviour {
 
     private void FollowPlayer()
     {
-        if (Player.me != null)
+        if (PlayerData.Me.gameObject != null)
         {
-            cameraPivot.position = Player.me.transform.position;
+            cameraPivot.position = PlayerData.Me.gameObject.transform.position;
         }
     }
 
