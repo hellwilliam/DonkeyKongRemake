@@ -12,6 +12,8 @@ public class FireBall_Move : MonoBehaviour
     public Ladder ladder;
     public bool ladderStartedClimb;
     public bool grounded;
+
+    public float lifeSpan = 30f;
     //public Player player;
 
 
@@ -63,11 +65,19 @@ public class FireBall_Move : MonoBehaviour
     void Awake()
     {
         nav = GetComponent<NavMeshAgent>();
+
+        Destroy(gameObject, lifeSpan);
     }
     
     void Update ()
     {
-        nav.SetDestination(target.position);
+        GameObject g = GameObject.FindGameObjectWithTag("DonkeyKong");
+        if (g != null)
+        {
+            target = g.transform;
+            nav.SetDestination(target.position);
+        }
+        
    
         //Speed();
         //moveFireBall.rigidbody.AddRelativeForce(moveFoward * 20, ForceMode.VelocityChange);
