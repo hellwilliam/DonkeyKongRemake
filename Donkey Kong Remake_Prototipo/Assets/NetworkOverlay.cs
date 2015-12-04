@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class NetworkOverlay : MonoBehaviour {
 
     public Text pingLabel;
+    public Text nameLabel;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,7 @@ public class NetworkOverlay : MonoBehaviour {
         {
             pingLabel.text = "Ping: " + Network.GetAveragePing(Network.connections[0]);
         }
+        nameLabel.text = "Name: " + PlayerData.Me.name;
 	}
 
     public void Disconnect()
