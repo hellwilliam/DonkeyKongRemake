@@ -2,34 +2,15 @@
 using System.Collections;
 
 public class FireBall_Move : MonoBehaviour 
-{
-    //My Code-------------------------------------------------------------------------
-    //public float stepSpeed = 2f;
-    //public Transform moveFireBall;
-    //public Vector3 moveFoward = Vector3.zero;
+{    
     public NavMeshAgent nav;
     public Transform target;
     public Ladder ladder;
     public bool ladderStartedClimb;
     public bool grounded;
-
+  
     public float lifeSpan = 30f;
-    //public Player player;
-
-
-    //void Speed()
-    //{
-    //    moveFoward.z = 1 * Time.deltaTime;
-    //}
-
-    //void playerToFollow(Transform other)
-    //{
-    //    if (other.gameObject.CompareTag("player"))
-    //    {
-    //        CharacterMovement player = other.gameObject.GetComponent<CharacterMovement>();
-    //    }
-    //}
-
+    
     void OnCollisionEnter(Collision other)
     {
         Debug.Log("Collide with player");
@@ -67,15 +48,17 @@ public class FireBall_Move : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
 
         Destroy(gameObject, lifeSpan);
+
     }
     
     void Update ()
     {
+
         GameObject g = GameObject.FindGameObjectWithTag("DonkeyKong");
         GameObject p = GameObject.FindGameObjectWithTag("Player");
         if (p != null)
         {
-            target = p.transform;
+             target = p.transform;
             nav.SetDestination(target.position);
         }
 
@@ -84,78 +67,27 @@ public class FireBall_Move : MonoBehaviour
             target = g.transform;
             nav.SetDestination(target.position);
         }
-        
-   
-        //Speed();
-        //moveFireBall.rigidbody.AddRelativeForce(moveFoward * 20, ForceMode.VelocityChange);
+
     }
-    //--------------------------------------------------------------------------------
 
-    //public Transform stuff;
-    //public Vector3 vel;
-    //public float swithDirectrion = 3f;
-    //public float curTime = 0;
-
-    //// Use this for initialization
-    //void Start () 
-    //{
-    //    SetVel();	
-    //}
-
-    //private void SetVel()
-    //{
-    //    if (Random.value > .5)
+    //GameObject FindClosestPlayer()
+    //{       
+    //    GameObject[] gos;
+    //    gos = GameObject.FindGameObjectsWithTag("Player");
+    //    GameObject closest = null;
+    //    float distance = Mathf.Infinity;
+    //    Vector3 position = transform.position;
+    //    foreach (GameObject go in gos)
     //    {
-    //        vel.x = 4 * 4 * Random.value;
-    //    }
-    //    else
-    //    {
-    //        vel.x = -4 * 4 * Random.value;
-    //    }
-
-    //    if (Random.value > .5)
-    //    {
-    //        vel.z = 4 * 4 * Random.value;
-    //    }
-
-    //    else
-    //    {
-    //        vel.z = -4 * 4 * Random.value;
-    //    }
-    //}
-	
-    //// Update is called once per frame
-    //void Update ()
-    //{
-    //    if (curTime < swithDirectrion)
-    //    {
-    //        curTime += 1 * Time.deltaTime;
-    //    }
-
-    //    else
-    //    {
-    //        SetVel();
-    //        if (Random.value > 5)
+    //        Vector3 diff = go.transform.position - position;
+    //        float curDistance = diff.sqrMagnitude;
+    //        if (curDistance < distance)
     //        {
-    //            swithDirectrion += Random.value;
-    //        }
-
-    //        else
-    //        {
-    //            swithDirectrion -= Random.value;
+    //            closest = go;
+    //            distance = curDistance;
+               
     //        }
     //    }
-
-    //    if (swithDirectrion < 1)
-    //    {
-    //        swithDirectrion = 1 + Random.value;
-    //    }
-
-    //    curTime = 0;
-    //}
-
-    //void FixedUpdate()
-    //{
-    //    stuff.rigidbody.velocity = vel;
+    //    return closest;
     //}
 }
