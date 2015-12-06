@@ -1,0 +1,306 @@
+fileFormatVersion: 2
+guid: 312ea6c268c2b3b41a1ff35fdcc46d34
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Body__m_Body
+    100002: Body__m_Eye
+    100004: Bone
+    100006: Foot_L
+    100008: Foot_R
+    100010: Hand_L
+    100012: Hand_R
+    100014: Head
+    100016: LowerArm_L
+    100018: LowerArm_R
+    100020: LowerLeg_L
+    100022: LowerLeg_R
+    100024: //RootNode
+    100026: MarioAnimation
+    100028: SpineBase
+    100030: SpineUp
+    100032: UpperArm_L
+    100034: UpperArm_R
+    100036: UpperLeg_L
+    100038: UpperLeg_R
+    400000: Body__m_Body
+    400002: Body__m_Eye
+    400004: Bone
+    400006: Foot_L
+    400008: Foot_R
+    400010: Hand_L
+    400012: Hand_R
+    400014: Head
+    400016: LowerArm_L
+    400018: LowerArm_R
+    400020: LowerLeg_L
+    400022: LowerLeg_R
+    400024: //RootNode
+    400026: MarioAnimation
+    400028: SpineBase
+    400030: SpineUp
+    400032: UpperArm_L
+    400034: UpperArm_R
+    400036: UpperLeg_L
+    400038: UpperLeg_R
+    4300000: Body__m_Body
+    4300002: Body__m_Eye
+    7400000: Mario_Idle
+    7400002: ArmatureAction
+    7400004: Mario_Walke
+    7400006: Default Take0
+    9500000: //RootNode
+    13700000: Body__m_Body
+    13700002: Body__m_Eye
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Mario_Idle
+      takeName: Default Take
+      firstFrame: 1
+      lastFrame: 37
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body__m_Body
+        weight: 1
+      - path: Body__m_Eye
+        weight: 1
+      - path: MarioAnimation
+        weight: 1
+      - path: MarioAnimation/Bone
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/Head
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_L
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_R
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_L
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_L/LowerLeg_L/Foot_L
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_R
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_R/LowerLeg_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Mario_Walke
+      takeName: Default Take
+      firstFrame: 39
+      lastFrame: 58
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body__m_Body
+        weight: 1
+      - path: Body__m_Eye
+        weight: 1
+      - path: MarioAnimation
+        weight: 1
+      - path: MarioAnimation/Bone
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/Head
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_L
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_R
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_L
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_L/LowerLeg_L/Foot_L
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_R
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_R/LowerLeg_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Default Take0
+      takeName: Default Take
+      firstFrame: 59
+      lastFrame: 76
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body__m_Body
+        weight: 1
+      - path: Body__m_Eye
+        weight: 1
+      - path: MarioAnimation
+        weight: 1
+      - path: MarioAnimation/Bone
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/Head
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_L
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_L/LowerArm_L
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_L/LowerArm_L/Hand_L
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_R
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_R/LowerArm_R
+        weight: 1
+      - path: MarioAnimation/Bone/SpineBase/SpineUp/UpperArm_R/LowerArm_R/Hand_R
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_L
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_L/LowerLeg_L
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_L/LowerLeg_L/Foot_L
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_R
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_R/LowerLeg_R
+        weight: 1
+      - path: MarioAnimation/Bone/UpperLeg_R/LowerLeg_R/Foot_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.20000005
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
