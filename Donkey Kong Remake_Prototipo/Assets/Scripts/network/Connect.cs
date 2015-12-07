@@ -61,6 +61,68 @@ public class Connect : MonoBehaviour
         }
     }
 
+    //void OnGUI()
+    //{
+    //    if (Network.peerType == NetworkPeerType.Disconnected)
+    //    {
+    //        // We are currently disconnected: Not a client or host
+    //        GUILayout.Label("Connection status: Disconnected");
+
+    //        this.connectToIP = GUILayout.TextField(connectToIP, GUILayout.MinWidth(100));
+    //        this.connectPort = int.Parse(GUILayout.TextField(this.connectPort.ToString()));
+
+    //        GUILayout.BeginVertical();
+
+    //        if (GUILayout.Button("Connect as client"))
+    //        {
+    //            // Connect ot the "connectToIP" and "connectPort" as entered via the GUI
+    //            // Ignore the NAT for now
+    //            // OBSOLETE: Network.useNat = false;
+    //            Network.Connect(connectToIP, connectPort);
+    //        }
+
+    //        if (GUILayout.Button("Start Server"))
+    //        {
+    //            // Start a server for 32 clients u sing the "connectPort" given via the GUI
+    //            // Ignore the nat for now
+    //            // OBSOLETE: Network.useNat = false;
+    //            // OBSOLETE: Network.InitializeServer(32, connectPort);
+    //            Network.InitializeServer(32, connectPort, false);
+    //        }
+
+    //        GUILayout.EndVertical();
+    //    }
+    //    else
+    //    {
+    //        // We've got a connection!
+
+    //        if (Network.peerType == NetworkPeerType.Connecting)
+    //        {
+    //            GUILayout.Label("Connection status: Connecting");
+    //        }
+    //        else if (Network.peerType == NetworkPeerType.Client)
+    //        {
+    //            GUILayout.Label("Connection status: Client!");
+    //            GUILayout.Label("Ping to server: " + Network.GetAveragePing(Network.connections[0]));
+    //        }
+    //        else if (Network.peerType == NetworkPeerType.Server)
+    //        {
+    //            GUILayout.Label("Connection status: Server!");
+    //            GUILayout.Label("Connections: " + Network.connections.Length);
+    //            if (Network.connections.Length >= 1)
+    //            {
+    //                GUILayout.Label("Ping to first player: " + Network.GetAveragePing(Network.connections[0]));
+    //            }
+    //        }
+
+    //        if (GUILayout.Button("Disconnect"))
+    //        {
+    //            Network.Disconnect(200);
+    //        }
+    //    }
+    //}
+
+
     public void UpdateIP(string ip)
     {
         connectToIP = ip;
