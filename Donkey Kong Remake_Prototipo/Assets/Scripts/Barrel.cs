@@ -57,6 +57,7 @@ public class Barrel : MonoBehaviour
 
     void Despawn(float delay = 1f)
     {
+        Network.Destroy(gameObject);
         Destroy(gameObject, delay);
     }
 
@@ -73,14 +74,15 @@ public class Barrel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moving)
+        if (moving && networkView.isMine)
         {
             if (waypointToFollow != null)
             {
                 Vector3 pos = waypointToFollow.transform.position - rigidbody.position;
                 pos.y = 0; // force rotation on Y
                 Quaternion myRot = Quaternion.LookRotation(pos);
-                rigidbody.rotation = Quaternion.Slerp(rigidbody.rotation, myRot, rotationSpeed * Time.deltaTime);
+                //rigidbody.rotation = Quaternion.Slerp(rigidbody.rotation, myRot, rotationSpeed * Time.deltaTime);
+                rigidbody.MoveRotation(Quaternion.Slerp(rigidbody.rotation, myRot, rotationSpeed * Time.deltaTime));
 
                 Vector3 force = transform.forward * (Time.deltaTime * speed);
                 Vector3 newPosition = rigidbody.position + force;
@@ -90,6 +92,7 @@ public class Barrel : MonoBehaviour
             if (dead)
             {
                 rigidbody.position = rigidbody.position + ((-transform.up) * speed * Time.deltaTime);
+                rigidbody.freezeRotation = true;
             }
 
             if (rigidbody.position.y < -10)

@@ -8,6 +8,6 @@ namespace Assets.Scripts.network
 {
     public class Server : MonoBehaviour
     {
-        void On
+        //void On
     }
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -16,6 +16,10 @@ public class NetworkOverlay : MonoBehaviour {
         if (Network.isClient)
         {
             pingLabel.text = "Ping: " + Network.GetAveragePing(Network.connections[0]);
+        }
+        else
+        {
+            pingLabel.text = "Ping: 0ms";
         }
         nameLabel.text = "Name: " + PlayerData.Me.name;
 	}

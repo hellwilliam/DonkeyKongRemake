@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Connect : MonoBehaviour
@@ -10,11 +10,15 @@ public class Connect : MonoBehaviour
     public const int MAX_PLAYERS = 4;
     public PlayerData[] players = new PlayerData[MAX_PLAYERS];
 
+    void Start()
+    {
+    }
+
     public PlayerData FindByNetworkPlayer(NetworkPlayer player)
     {
         foreach (PlayerData playerData in players)
         {
-            if (playerData.player == player)
+            if (playerData != null && playerData.player == player)
             {
                 return playerData;
             }
@@ -36,7 +40,7 @@ public class Connect : MonoBehaviour
     }
 
     [RPC]
-    public void SetName(string name, NetworkMessageInfo info)
+    public void SendName(string name, NetworkMessageInfo info)
     {
         PlayerData player = new PlayerData();
         player.name = name;
@@ -159,16 +163,17 @@ public class Connect : MonoBehaviour
         {
             nickname = "Anonymous" + Random.Range(0, 9999);
         }
-        PlayerData.Me.name = nickname;
         Debug.Log("Player name: " + PlayerData.Me.name);
         if (Network.isServer)
         {
             NetworkMessageInfo msg = new NetworkMessageInfo();
-            SetName(nickname, msg);
+            SendName(nickname, msg);
+            PlayerData.Me = players[0];
         }
         else
         {
-            networkView.RPC("SetName", RPCMode.Server, nickname);
+            PlayerData.Me.name = nickname;
+            networkView.RPC("SendName", RPCMode.Server, nickname);
         }
     }
 

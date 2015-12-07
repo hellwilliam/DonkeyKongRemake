@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerData
@@ -13,6 +13,10 @@ public class PlayerData
                 me = new PlayerData();
             }
             return me;
+        }
+        set
+        {
+            me = value;
         }
     }
     public string name;
@@ -36,18 +40,14 @@ public class Player : MonoBehaviour
     void DoThings()
     {
         
-        if (Network.peerType == NetworkPeerType.Client)
-        {
-            PlayerData.Me.gameObject = (GameObject)Network.Instantiate(player1prefab, new Vector3(9.5f, 1, -12), Quaternion.identity, 0);
-        }
-        else if (Network.peerType == NetworkPeerType.Server)
-        {
-            PlayerData.Me.gameObject = (GameObject)Network.Instantiate(player2prefab, new Vector3(7.5f, 1, -12), Quaternion.identity, 0);
-        }
-        else
+        if (Network.peerType == NetworkPeerType.Disconnected)
         {
             Debug.Log("NOT CONNECTED");
             PlayerData.Me.gameObject = (GameObject)Instantiate(player1prefab, new Vector3(9.5f, 1, -12), Quaternion.identity);
+        }
+        else
+        {
+            PlayerData.Me.gameObject = (GameObject)Network.Instantiate(PlayerData.Me.prefab, new Vector3(9.5f, 1, -12), Quaternion.identity, 0);
         }
     }
 

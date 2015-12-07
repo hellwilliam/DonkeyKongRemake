@@ -6,12 +6,14 @@ public class UIManager : MonoBehaviour {
     public GameObject connectPanel;
     public GameObject networkOverlay;
     public GameObject chatPanel;
+    public GameObject playerSelect;
 
 	// Use this for initialization
 	void Start () {
         connectPanel.SetActive(true);
         networkOverlay.SetActive(false);
         chatPanel.SetActive(false);
+        playerSelect.SetActive(false);
 	}
 	
 	// Update is called once per frame
@@ -25,6 +27,7 @@ public class UIManager : MonoBehaviour {
         connectPanel.SetActive(false);
         networkOverlay.SetActive(true);
         chatPanel.SetActive(true);
+        playerSelect.SetActive(true);
     }
 
     void OnServerInitialized()
@@ -33,6 +36,7 @@ public class UIManager : MonoBehaviour {
         connectPanel.SetActive(false);
         networkOverlay.SetActive(true);
         chatPanel.SetActive(true);
+        playerSelect.SetActive(true);
     }
 
     void OnDisconnectedFromServer(NetworkDisconnection info)
@@ -41,5 +45,6 @@ public class UIManager : MonoBehaviour {
         connectPanel.SetActive(true);
         networkOverlay.SetActive(false);
         chatPanel.SetActive(false);
+        playerSelect.SetActive(false);
     }
 }

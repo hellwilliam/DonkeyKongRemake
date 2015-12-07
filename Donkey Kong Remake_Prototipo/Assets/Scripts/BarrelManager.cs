@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class BarrelManager : MonoBehaviour 
@@ -20,10 +20,17 @@ public class BarrelManager : MonoBehaviour
 
     void Spawn()
     {
-        if (spawning)
+        if (spawning && (Network.isServer || Network.peerType == NetworkPeerType.Disconnected))
         {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-            Instantiate(barrel, spawnPoints[spawnPointIndex].position, Quaternion.identity);
+            if (Network.isServer)
+            {
+                Network.Instantiate(barrel, spawnPoints[spawnPointIndex].position, Quaternion.identity, 0);
+            }
+            else
+            {
+                Instantiate(barrel, spawnPoints[spawnPointIndex].position, Quaternion.identity);
+            }
         }
     }
 }
