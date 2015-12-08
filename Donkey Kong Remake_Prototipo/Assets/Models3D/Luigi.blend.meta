@@ -47,7 +47,7 @@ ModelImporter:
     4300002: Body__m_Eye
     7400000: Luigi_Idle
     7400002: ArmatureAction_001
-    7400004: Luigi_Wlake
+    7400004: Luigi_Walke
     7400006: Luigi_Jump
     9500000: //RootNode
     13700000: Body__m_Body
@@ -135,7 +135,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Luigi_Wlake
+      name: Luigi_Walke
       takeName: Default Take
       firstFrame: 39
       lastFrame: 58

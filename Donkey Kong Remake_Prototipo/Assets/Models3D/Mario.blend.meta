@@ -48,7 +48,7 @@ ModelImporter:
     7400000: Mario_Idle
     7400002: ArmatureAction
     7400004: Mario_Walke
-    7400006: Default Take0
+    7400006: Mario_Jumping
     9500000: //RootNode
     13700000: Body__m_Body
     13700002: Body__m_Eye
@@ -201,7 +201,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Default Take0
+      name: Mario_Jumping
       takeName: Default Take
       firstFrame: 59
       lastFrame: 76
