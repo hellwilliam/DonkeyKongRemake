@@ -10,6 +10,8 @@ public class Connect : MonoBehaviour
     public const int MAX_PLAYERS = 4;
     public PlayerData[] players = new PlayerData[MAX_PLAYERS];
 
+    public Chat2 chat;
+
     void Start()
     {
     }
@@ -57,6 +59,7 @@ public class Connect : MonoBehaviour
         if (playerIndex >= 0)
         {
             players[playerIndex] = player;
+            chat.SendMessage("Joined: " + player.name);
             Debug.Log("PLAYER LOGGED IN AS " + player.name);
         }
         else

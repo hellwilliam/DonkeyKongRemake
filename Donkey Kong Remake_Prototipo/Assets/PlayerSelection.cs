@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class PlayerSelection : MonoBehaviour {
     public Connect server;
+    public Chat2 chat;
     public Button startButton;
     public GameObject[] prefabs = new GameObject[Connect.MAX_PLAYERS];
 
