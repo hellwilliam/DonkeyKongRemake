@@ -16,7 +16,7 @@ Platform assembly: C:\Users\diogoriba\Documents\faculdade\DonkeyKongRemake\Donke
 Loading C:\Users\diogoriba\Documents\faculdade\DonkeyKongRemake\Donkey Kong Remake_Prototipo\DK3D_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
 Platform assembly: C:\Users\diogoriba\Documents\faculdade\DonkeyKongRemake\Donkey Kong Remake_Prototipo\DK3D_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\diogoriba\Documents\faculdade\DonkeyKongRemake\Donkey Kong Remake_Prototipo\DK3D_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.057 seconds
+- Completed reload, in  0.092 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -30,81 +30,21 @@ This CLIENT has connected to a server
  
 (Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
 
-Anonymous8781:True
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
-
-UnloadTime: 1.678969 ms
+UnloadTime: 1.575762 ms
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
 Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 995.
-Total: 0.673127 ms (FindLiveObjects: 0.024518 ms CreateObjectMapping: 0.011119 ms MarkObjects: 0.188452 ms  DeleteObjects: 0.115751 ms)
+Total: 0.654880 ms (FindLiveObjects: 0.026799 ms CreateObjectMapping: 0.010263 ms MarkObjects: 0.187027 ms  DeleteObjects: 0.104632 ms)
 
-View ID AllocatedID: 4 not found during lookup. Strange behaviour may occur
+View ID AllocatedID: 1 not found during lookup. Strange behaviour may occur
  
 (Filename:  Line: 1681)
 
-Couldn't perform remote Network.Destroy because the network view 'AllocatedID: 4' could not be located.
+Couldn't perform remote Network.Destroy because the network view 'AllocatedID: 1' could not be located.
  
 (Filename:  Line: 2463)
 
-View ID AllocatedID: 10 not found during lookup. Strange behaviour may occur
+The server has disconnected from the client. Most likely the server has shut down.
  
-(Filename:  Line: 1681)
-
-Couldn't perform remote Network.Destroy because the network view 'AllocatedID: 10' could not be located.
- 
-(Filename:  Line: 2463)
-
-View ID AllocatedID: 5 not found during lookup. Strange behaviour may occur
- 
-(Filename:  Line: 1681)
-
-Couldn't perform remote Network.Destroy because the network view 'AllocatedID: 5' could not be located.
- 
-(Filename:  Line: 2463)
-
-View ID AllocatedID: 12 not found during lookup. Strange behaviour may occur
- 
-(Filename:  Line: 1681)
-
-Couldn't perform remote Network.Destroy because the network view 'AllocatedID: 12' could not be located.
- 
-(Filename:  Line: 2463)
-
-View ID AllocatedID: 16 not found during lookup. Strange behaviour may occur
- 
-(Filename:  Line: 1681)
-
-Couldn't perform remote Network.Destroy because the network view 'AllocatedID: 16' could not be located.
- 
-(Filename:  Line: 2463)
-
-View ID AllocatedID: 23 not found during lookup. Strange behaviour may occur
- 
-(Filename:  Line: 1681)
-
-Couldn't perform remote Network.Destroy because the network view 'AllocatedID: 23' could not be located.
- 
-(Filename:  Line: 2463)
-
-View ID AllocatedID: 30 not found during lookup. Strange behaviour may occur
- 
-(Filename:  Line: 1681)
-
-Couldn't perform remote Network.Destroy because the network view 'AllocatedID: 30' could not be located.
- 
-(Filename:  Line: 2463)
-
-View ID AllocatedID: 37 not found during lookup. Strange behaviour may occur
- 
-(Filename:  Line: 1681)
-
-Couldn't perform remote Network.Destroy because the network view 'AllocatedID: 37' could not be located.
- 
-(Filename:  Line: 2463)
-
-Collide with player
- 
-(Filename: C:/buildslave/unity/build/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 56)
+(Filename:  Line: 745)
 

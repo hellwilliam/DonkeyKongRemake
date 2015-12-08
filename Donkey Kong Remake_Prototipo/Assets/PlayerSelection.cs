@@ -59,14 +59,13 @@ public class PlayerSelection : MonoBehaviour {
                 player.ready = ready;
             }
             CheckIfAllReady();
-            Debug.Log("CHECKING");
         }
     }
 
     public void Ready(bool ready)
     {
         PlayerData.Me.ready = ready;
-        Debug.Log(PlayerData.Me.name + ":" + PlayerData.Me.ready);
+        PlayerData.Me.prefab = PlayerData.Me.prefab ?? prefabs[0];
         if (Network.isClient)
         {
             networkView.RPC("SendReady", RPCMode.Server, ready);
@@ -77,8 +76,17 @@ public class PlayerSelection : MonoBehaviour {
         }
     }
 
+    [RPC]
     public void StartGame()
     {
-        Application.LoadLevel("Donkey Kong_Prototipo");
+        if (Network.isServer)
+        {
+            networkView.RPC("StartGame", RPCMode.Others);
+            Application.LoadLevel("Donkey Kong_Prototipo");
+        }
+        else
+        {
+            Application.LoadLevel("Donkey Kong_Prototipo");
+        }
     }
 }
