@@ -8,6 +8,7 @@ public class BarrelManager : MonoBehaviour
     public Transform[] spawnPoints;
     public GameObject barrel;
 
+    private static int id = 0;
     void Start()
     {
         InvokeRepeating("Spawn", spawnTime, spawnTime);
@@ -29,7 +30,9 @@ public class BarrelManager : MonoBehaviour
             }
             else
             {
-                Instantiate(barrel, spawnPoints[spawnPointIndex].position, Quaternion.identity);
+                GameObject obj = (GameObject)Instantiate(barrel, spawnPoints[spawnPointIndex].position, Quaternion.identity);
+                obj.name = obj.name + id;
+                id += 1;
             }
         }
     }

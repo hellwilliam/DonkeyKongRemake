@@ -57,8 +57,14 @@ public class Barrel : MonoBehaviour
 
     void Despawn(float delay = 1f)
     {
-        Network.Destroy(gameObject);
-        Destroy(gameObject, delay);
+        if (Network.isServer)
+        {
+            Network.Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Awake()
@@ -74,7 +80,7 @@ public class Barrel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moving && networkView.isMine)
+        if (moving && (networkView.isMine || Network.peerType == NetworkPeerType.Disconnected))
         {
             if (waypointToFollow != null)
             {
@@ -92,7 +98,6 @@ public class Barrel : MonoBehaviour
             if (dead)
             {
                 rigidbody.position = rigidbody.position + ((-transform.up) * speed * Time.deltaTime);
-                rigidbody.freezeRotation = true;
             }
 
             if (rigidbody.position.y < -10)

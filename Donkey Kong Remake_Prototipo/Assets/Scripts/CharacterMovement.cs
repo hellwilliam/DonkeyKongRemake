@@ -173,7 +173,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Die()
     {
-        if (networkView.isMine)
+        if (networkView.isMine || Network.peerType == NetworkPeerType.Disconnected)
         {
             dead = true;
             GameOverManager.instance.GameOver();
@@ -182,7 +182,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Win()
     {
-        if (networkView.isMine)
+        if (networkView.isMine || Network.peerType == NetworkPeerType.Disconnected)
         {
             won = true;
             VictoryManager.instance.Win();
