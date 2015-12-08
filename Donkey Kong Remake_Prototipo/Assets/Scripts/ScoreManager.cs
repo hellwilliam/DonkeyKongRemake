@@ -1,17 +1,18 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour {
-
+    private Connect server;
     public static int score;
     public int scoreEditor;
     Text scorePanel;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         score = 0;
         scoreEditor = 0;
         scorePanel = GetComponent<Text>();
+        server = GameObject.FindGameObjectWithTag("Server").GetComponent<Connect>();
 	}
 	
 	// Update is called once per frame

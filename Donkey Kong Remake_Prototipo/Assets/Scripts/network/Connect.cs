@@ -10,8 +10,6 @@ public class Connect : MonoBehaviour
     public const int MAX_PLAYERS = 4;
     public PlayerData[] players = new PlayerData[MAX_PLAYERS];
 
-    public Chat2 chat;
-
     void Start()
     {
     }
@@ -41,6 +39,11 @@ public class Connect : MonoBehaviour
         }
     }
 
+    void OnDisconnectedFromServer()
+    {
+        Application.LoadLevel("Connect");
+    }
+
     [RPC]
     public void SendName(string name, NetworkMessageInfo info)
     {
@@ -59,7 +62,15 @@ public class Connect : MonoBehaviour
         if (playerIndex >= 0)
         {
             players[playerIndex] = player;
-            chat.SendMessage("Joined: " + player.name);
+            GameObject chatObject = GameObject.FindGameObjectWithTag("Chat");
+            if (chatObject != null)
+            {
+                Chat2 chat = chatObject.GetComponent<Chat2>();
+                if (chat != null)
+                {
+                    chat.SendMessage("Joined: " + player.name);
+                }
+            }
             Debug.Log("PLAYER LOGGED IN AS " + player.name);
         }
         else

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class VictoryManager : MonoBehaviour {
@@ -8,6 +8,7 @@ public class VictoryManager : MonoBehaviour {
     public void Win()
     {
         victoryScreen.SetActive(true);
+        Invoke("Restart", 10f);
     }
 
 	// Use this for initialization
@@ -18,6 +19,6 @@ public class VictoryManager : MonoBehaviour {
 
     public void Restart()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        Application.LoadLevel("Connect");
     }
 }

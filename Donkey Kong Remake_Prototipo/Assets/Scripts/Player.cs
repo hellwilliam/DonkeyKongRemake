@@ -29,12 +29,13 @@ public class PlayerData
 
 public class Player : MonoBehaviour 
 {
-    
     public GameObject player1prefab;
-    public GameObject player2prefab;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
+        Barrel.moving = true;
+        BarrelManager.spawning = true;
+        DoThings();
 	}
 
     void DoThings()
@@ -50,12 +51,4 @@ public class Player : MonoBehaviour
             PlayerData.Me.gameObject = (GameObject)Network.Instantiate(PlayerData.Me.prefab, new Vector3(9.5f, 1, -12), Quaternion.identity, 0);
         }
     }
-
-	// Update is called once per frame
-	void Update () {
-	    if (Input.GetKeyDown(KeyCode.I))
-        {
-            DoThings();
-        }
-	}
 }

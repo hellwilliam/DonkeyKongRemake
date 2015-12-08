@@ -8,43 +8,33 @@ public class UIManager : MonoBehaviour {
     public GameObject chatPanel;
     public GameObject playerSelect;
 
-	// Use this for initialization
-	void Start () {
-        connectPanel.SetActive(true);
-        networkOverlay.SetActive(false);
-        chatPanel.SetActive(false);
-        playerSelect.SetActive(false);
+	void Awake () {
+        ChangeUI(Network.isClient || Network.isServer);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    void ChangeUI(bool connected)
+    {
+        connectPanel.SetActive(!connected);
+        networkOverlay.SetActive(connected);
+        chatPanel.SetActive(connected);
+        playerSelect.SetActive(connected);
+    }
 
     void OnConnectedToServer()
     {
         Debug.Log("This CLIENT has connected to a server");
-        connectPanel.SetActive(false);
-        networkOverlay.SetActive(true);
-        chatPanel.SetActive(true);
-        playerSelect.SetActive(true);
+        ChangeUI(true);
     }
 
     void OnServerInitialized()
     {
         Debug.Log("Server initialized and ready");
-        connectPanel.SetActive(false);
-        networkOverlay.SetActive(true);
-        chatPanel.SetActive(true);
-        playerSelect.SetActive(true);
+        ChangeUI(true);
     }
 
     void OnDisconnectedFromServer(NetworkDisconnection info)
     {
         Debug.Log("This SERVER OR CLIENT has disconnected from a server");
-        connectPanel.SetActive(true);
-        networkOverlay.SetActive(false);
-        chatPanel.SetActive(false);
-        playerSelect.SetActive(false);
+        ChangeUI(false);
     }
 }

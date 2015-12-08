@@ -3,13 +3,14 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class PlayerSelection : MonoBehaviour {
-    public Connect server;
+    private Connect server;
     public Chat2 chat;
     public Button startButton;
     public GameObject[] prefabs = new GameObject[Connect.MAX_PLAYERS];
 
-    void Start()
+    void Awake()
     {
+        server = GameObject.FindGameObjectWithTag("Server").GetComponent<Connect>();
     }
 
     void Update()

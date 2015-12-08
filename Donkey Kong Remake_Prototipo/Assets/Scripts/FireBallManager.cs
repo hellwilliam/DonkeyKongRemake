@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class FireBallManager : MonoBehaviour
@@ -24,7 +24,15 @@ public class FireBallManager : MonoBehaviour
         if (spawning)
         {
             int spawnPointIndex = Random.Range(0, spawnPoints.Length);
-            Instantiate(fireball, spawnPoints[spawnPointIndex].position, Quaternion.identity);
+            if (Network.isServer)
+            {
+                Network.Instantiate(fireball, spawnPoints[spawnPointIndex].position, Quaternion.identity, 0);
+            }
+            else if (Network.peerType == NetworkPeerType.Disconnected)
+            {
+                Instantiate(fireball, spawnPoints[spawnPointIndex].position, Quaternion.identity);
+            }
+            
         }
 	}
 }

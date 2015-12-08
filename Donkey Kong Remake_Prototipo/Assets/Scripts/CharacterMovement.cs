@@ -65,23 +65,7 @@ public class CharacterMovement : MonoBehaviour
                 CheckKillPlane();                            
             }           
         }
-        CheckRestartInput();        
 	}
-
-    private void CheckRestartInput()
-    {
-        if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("Restart"))
-        {
-            if (dead)
-            {
-                GameOverManager.instance.Restart();
-            }
-            else if (won)
-            {
-                VictoryManager.instance.Restart();
-            }
-        }
-    }
 
     private void CheckKillPlane()
     {

@@ -57,11 +57,11 @@ public class Barrel : MonoBehaviour
 
     void Despawn(float delay = 1f)
     {
-        if (Network.isServer)
+        if (Network.isServer || networkView.isMine)
         {
             Network.Destroy(gameObject);
         }
-        else
+        else if (Network.peerType == NetworkPeerType.Disconnected)
         {
             Destroy(gameObject);
         }

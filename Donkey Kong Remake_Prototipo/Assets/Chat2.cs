@@ -7,14 +7,14 @@ using System.Text;
 
 public class Chat2 : MonoBehaviour {
 
-    public Connect server;
+    private Connect server;
     public Text chatContentPanel;
     public string currentMessage;
     public List<string> text;
     public int maxMessages = 30;
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
+        server = GameObject.FindGameObjectWithTag("Server").GetComponent<Connect>();
 	}
 	
 	// Update is called once per frame

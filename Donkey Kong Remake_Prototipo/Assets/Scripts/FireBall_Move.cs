@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class FireBall_Move : MonoBehaviour 
@@ -53,21 +53,22 @@ public class FireBall_Move : MonoBehaviour
     
     void Update ()
     {
-
-        GameObject g = GameObject.FindGameObjectWithTag("DonkeyKong");
-        GameObject p = GameObject.FindGameObjectWithTag("Player");
-        if (p != null)
+        if (networkView.isMine || Network.peerType == NetworkPeerType.Disconnected)
         {
-             target = p.transform;
-            nav.SetDestination(target.position);
-        }
+            GameObject g = GameObject.FindGameObjectWithTag("DonkeyKong");
+            GameObject p = GameObject.FindGameObjectWithTag("Player");
+            if (p != null)
+            {
+                target = p.transform;
+                nav.SetDestination(target.position);
+            }
 
-        else if (g != null)
-        {
-            target = g.transform;
-            nav.SetDestination(target.position);
+            else if (g != null)
+            {
+                target = g.transform;
+                nav.SetDestination(target.position);
+            }
         }
-
     }
 
     //GameObject FindClosestPlayer()
