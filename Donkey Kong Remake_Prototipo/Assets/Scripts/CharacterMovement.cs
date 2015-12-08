@@ -16,6 +16,7 @@ public class CharacterMovement : MonoBehaviour
     public bool won;
     int floorMask;
     Vector3 lastMove;
+    Animator anim;
 
     public void EnterLadder(Ladder ladder)
     {
@@ -47,6 +48,7 @@ public class CharacterMovement : MonoBehaviour
         won = false;
         ladderStartedClimb = false;
         lastMove = transform.forward;
+        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -60,10 +62,10 @@ public class CharacterMovement : MonoBehaviour
                 Move();
                 Rotate();
                 Jump();
-                CheckKillPlane();
-            }
+                CheckKillPlane();                            
+            }           
         }
-        CheckRestartInput();
+        CheckRestartInput();        
 	}
 
     private void CheckRestartInput()
@@ -93,6 +95,9 @@ public class CharacterMovement : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
+
+        //Animating(h, v);
+        
         Vector3 moveDirection = transform.forward;
         if (ladder)
         {
@@ -120,6 +125,8 @@ public class CharacterMovement : MonoBehaviour
             moveDirection *= Time.deltaTime;
             lastMove = moveDirection;
             rigidbody.position += moveDirection;
+
+            Animating(h, v);            
         }
         else if (jumped)
         {
@@ -187,5 +194,12 @@ public class CharacterMovement : MonoBehaviour
             won = true;
             VictoryManager.instance.Win();
         }
+    }
+
+    void Animating (float h, float v)
+    {
+        bool walking = h != 0f || v != 0f;
+
+        anim.SetBool("IsWalking", walking); 
     }
 }
